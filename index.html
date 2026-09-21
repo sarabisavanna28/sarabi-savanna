@@ -3,13 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta property="og:title" content="Sarabi Savanna — Luxury safaris in Kenya & Tanzania">
-<meta property="og:description" content="Tailor-made luxury safaris across Kenya and Tanzania, crafted in Nairobi. Where wilderness meets wonder.">
-<meta property="og:image" content="images/hero.webp">
+<title>Sarabi Savanna — Luxury Safaris in Kenya &amp; Tanzania</title>
+<meta name="description" content="Sarabi Savanna is a Nairobi-based, female-founded safari house crafting tailor-made luxury safaris across Kenya and Tanzania — the Maasai Mara, Amboseli, Laikipia, Samburu, the coast, the Serengeti and beyond. Where wilderness meets wonder.">
+<meta name="keywords" content="Kenya safari, luxury safari Kenya, Tanzania safari, Maasai Mara safari, tailor-made safari, Amboseli, Serengeti, Nairobi safari company, honeymoon safari Kenya, private safari">
+<meta name="author" content="Sarabi Savanna">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://sarabisavanna28.github.io/sarabi-savanna/">
 <meta name="theme-color" content="#1A1614">
 <link rel="icon" type="image/png" href="images/logo-mark.png">
-<title>Sarabi Savanna</title>
-<meta name="description" content="Sarabi Savanna — tailor-made luxury safaris across Kenya and Tanzania, crafted from Nairobi. Where wilderness meets wonder.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sarabi Savanna">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Sarabi Savanna — Luxury Safaris in Kenya &amp; Tanzania">
+<meta property="og:description" content="Tailor-made luxury safaris across Kenya and Tanzania, crafted in Nairobi. Where wilderness meets wonder.">
+<meta property="og:url" content="https://sarabisavanna28.github.io/sarabi-savanna/">
+<meta property="og:image" content="https://sarabisavanna28.github.io/sarabi-savanna/images/hero.webp">
+<meta property="og:image:alt" content="A lioness surveys the Maasai Mara at dawn">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sarabi Savanna — Luxury Safaris in Kenya &amp; Tanzania">
+<meta name="twitter:description" content="Tailor-made luxury safaris across Kenya and Tanzania, crafted in Nairobi. Where wilderness meets wonder.">
+<meta name="twitter:image" content="https://sarabisavanna28.github.io/sarabi-savanna/images/hero.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Figtree:wght@300;400;500;600&display=swap">
@@ -205,7 +218,7 @@ body.menu-open .menu-foot{opacity:1}
 @keyframes ticker{to{transform:translateX(-50%)}}
 
 /* ---------- explore chooser ---------- */
-.explore{position:relative;min-height:92svh;overflow:hidden;isolation:isolate;color:var(--sand);display:grid;place-items:center}
+.explore{position:relative;min-height:80svh;overflow:hidden;isolation:isolate;color:var(--sand);display:grid;place-items:center}
 .explore-bg{position:absolute;inset:0;z-index:-3}
 .explore-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s var(--ease)}
 .explore-slide.is-active{opacity:1}
@@ -556,7 +569,87 @@ body.menu-open .menu-foot{opacity:1}
   .scrub-words .sw{opacity:1!important}
   body::before{display:none}
 }
+
+/* Instagram — from the wild */
+.insta-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:30px;margin-bottom:46px}
+.insta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.insta-tile{position:relative;overflow:hidden;border-radius:6px;aspect-ratio:1/1;background:var(--night-2);display:block}
+.insta-tile:first-child{grid-column:span 2;grid-row:span 2}
+.insta-tile img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.insta-tile::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,rgba(26,22,20,.15),rgba(26,22,20,.55));opacity:0;transition:opacity .55s var(--ease)}
+.insta-tile:hover img{transform:scale(1.07)}
+.insta-tile:hover::after{opacity:1}
+.insta-ic{position:absolute;left:50%;top:50%;width:34px;height:34px;transform:translate(-50%,-50%) scale(.65);color:var(--sand);opacity:0;z-index:1;transition:opacity .5s var(--ease),transform .5s var(--ease);filter:drop-shadow(0 2px 12px rgba(26,22,20,.7))}
+.insta-tile:hover .insta-ic{opacity:1;transform:translate(-50%,-50%) scale(1)}
+@media(max-width:760px){
+  .insta-head{grid-template-columns:1fr;gap:22px}
+  .insta-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+}
+
+/* Our Land Cruiser page */
+.lc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,90px);align-items:center}
+.lc-viewer{position:relative;border-radius:8px;overflow:hidden;background:radial-gradient(120% 120% at 50% 22%,#f4eee2,#e3d9c7);aspect-ratio:1/1;box-shadow:inset 0 0 90px rgba(120,60,20,.07)}
+.lc-viewer model-viewer{width:100%;height:100%;background:transparent;--poster-color:transparent}
+.lc-hint{position:absolute;left:0;right:0;bottom:16px;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);pointer-events:none}
+.lc-list{list-style:none;margin-top:30px;display:grid;gap:15px}
+.lc-list li{display:flex;gap:14px;align-items:flex-start;font-size:15.5px;line-height:1.5;color:var(--ink-2)}
+.lc-list li::before{content:"";flex:0 0 7px;height:7px;border-radius:50%;background:var(--gold);margin-top:8px}
+@media(max-width:900px){.lc-grid{grid-template-columns:1fr;gap:38px}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://sarabisavanna28.github.io/sarabi-savanna/#website",
+      "url": "https://sarabisavanna28.github.io/sarabi-savanna/",
+      "name": "Sarabi Savanna",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://sarabisavanna28.github.io/sarabi-savanna/#org" }
+    },
+    {
+      "@type": "TravelAgency",
+      "@id": "https://sarabisavanna28.github.io/sarabi-savanna/#org",
+      "name": "Sarabi Savanna",
+      "description": "Nairobi-based, female-founded safari house crafting tailor-made luxury safaris across Kenya and Tanzania.",
+      "url": "https://sarabisavanna28.github.io/sarabi-savanna/",
+      "logo": "https://sarabisavanna28.github.io/sarabi-savanna/images/logo-mark.png",
+      "image": "https://sarabisavanna28.github.io/sarabi-savanna/images/hero.webp",
+      "telephone": "+254708010499",
+      "email": "info@sarabisavanna.com",
+      "priceRange": "$$$",
+      "slogan": "Where wilderness meets wonder",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2nd Floor, Apricot Suites, Fourth Parklands Avenue, Parklands",
+        "addressLocality": "Nairobi",
+        "postalCode": "42902-00100",
+        "addressCountry": "KE"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Kenya" },
+        { "@type": "Country", "name": "Tanzania" }
+      ],
+      "knowsAbout": ["Safari", "Wildlife tourism", "Maasai Mara", "Amboseli", "Serengeti", "Luxury travel"],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "hasMap": "https://maps.app.goo.gl/re7WPp619emCkddXA",
+      "sameAs": [
+        "https://www.instagram.com/sarabisavanna/",
+        "https://wa.me/254708010499",
+        "https://maps.app.goo.gl/re7WPp619emCkddXA"
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -573,6 +666,7 @@ body.menu-open .menu-foot{opacity:1}
       <a href="#/destinations" data-route data-nav="destinations">Destinations</a>
       <a href="#/safaris" data-route data-nav="safaris">Safaris</a>
       <a href="#/about" data-route data-nav="about">About</a>
+      <a href="#/landcruiser" data-route data-nav="landcruiser">Land Cruiser</a>
       <a href="#/plan" data-route data-nav="plan">Contact</a>
     </nav>
     <div class="nav-right">
@@ -590,6 +684,7 @@ body.menu-open .menu-foot{opacity:1}
     <a href="#/destinations" data-route>Destinations<i>Kenya · Tanzania</i></a>
     <a href="#/safaris" data-route>Safaris<i>Journeys</i></a>
     <a href="#/about" data-route>About<i>Our story</i></a>
+    <a href="#/landcruiser" data-route>Land Cruiser<i>Our vehicle</i></a>
     <a href="#/plan" data-route>Plan your safari<i>Enquire</i></a>
   </nav>
   <div class="menu-foot">
@@ -688,53 +783,8 @@ body.menu-open .menu-foot{opacity:1}
     <div class="explore-dots" aria-hidden="true"><i data-dot="kenya" class="is-on"></i><i data-dot="tanzania"></i></div>
   </section>
 
-  <!-- destinations journey -->
-  <section class="journey" id="journey">
-    <div class="wrap journey-head">
-      <div>
-        <span class="eyebrow" data-reveal>Destinations</span>
-        <h2 class="display h-l words" data-words style="margin-top:18px">From the Mara <em>to the</em> Indian Ocean</h2>
-      </div>
-      <p class="lede muted" data-reveal style="max-width:44ch">Stretching across the equator between the Rift Valley and the Indian Ocean, Kenya is a land of remarkable diversity. Scroll to travel it — then cross the border into Tanzania.</p>
-    </div>
-    <div class="journey-pin" id="journeyPin">
-      <div class="journey-track" id="journeyTrack">
-        <a class="dest wide" href="#/destinations/mara" data-route data-cursor="view">
-          <img src="images/lion-wide.webp" alt="">
-          <div class="dest-body"><div class="k"><span>01 — Kenya</span><span>Jun – Oct migration</span></div><h3>Maasai Mara</h3><p>Kenya’s most iconic landscape: sweeping savanna, umbrella acacias and an astonishing density of wildlife — never more so than when two million wildebeest wheel onto the Mara from the Serengeti.</p><span class="link">Discover <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div>
-        </a>
-        <a class="dest" href="#/destinations/amboseli" data-route data-cursor="view">
-          <img src="images/amboseli-p.webp" alt="A lone elephant below Mount Kilimanjaro in Amboseli">
-          <div class="dest-body"><div class="k"><span>02 — Kenya</span><span>Elephants</span></div><h3>Amboseli &amp; Chyulu</h3><p>Great elephant herds roam against the white backdrop of Kilimanjaro; beyond lie the green hills and forests of Chyulu.</p><span class="link">Discover <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div>
-        </a>
-        <a class="dest" href="#/destinations/laikipia" data-route data-cursor="view">
-          <img src="images/rhino-portrait.webp" alt="">
-          <div class="dest-body"><div class="k"><span>03 — Kenya</span><span>Conservation</span></div><h3>Laikipia &amp; Ol Pejeta</h3><p>Once cattle ranches, now a conservation haven at the foot of Mount Kenya, sheltering rhino, wild dog and reticulated giraffe.</p><span class="link">Discover <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div>
-        </a>
-        <a class="dest" href="#/destinations/samburu" data-route data-cursor="view">
-          <img src="images/eagle.webp" alt="">
-          <div class="dest-body"><div class="k"><span>04 — Kenya</span><span>The north</span></div><h3>Samburu &amp; the Northern Frontier</h3><p>Rugged, khaki-toned country and the home of the Samburu people — community-led conservation, and beyond it the deserts and volcanic lakes of the far north.</p><span class="link">Discover <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div>
-        </a>
-        <a class="dest" href="#/destinations/coast" data-route data-cursor="view">
-          <img src="images/balloons.webp" alt="">
-          <div class="dest-body"><div class="k"><span>05 — Kenya</span><span>Rift Valley &amp; Coast</span></div><h3>Rift Valley to the Coast</h3><p>Flamingo-pink lakes and volcanic wilds best seen from a helicopter, then white sand, dhows and coral reefs at Diani, Watamu and Malindi.</p><span class="link">Discover <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div>
-        </a>
-        <a class="dest wide" href="#/destinations/tanzania" data-route data-cursor="view">
-          <img src="images/ngorongoro.webp" alt="">
-          <div class="dest-body"><div class="k"><span>06 — Tanzania</span><span>On request</span></div><h3>Serengeti &amp; Ngorongoro</h3><p>Cross the border with us: the endless plains of the Serengeti, where the migration begins its great loop, and the misty rim of the Ngorongoro Crater.</p><span class="link">Discover <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div>
-        </a>
-        <div class="dest-end">
-          <span class="eyebrow">Where next?</span>
-          <h3 class="display h-s">Every destination, <em>tailored</em> to how you travel.</h3>
-          <a class="btn btn-ghost" href="#/destinations" data-route>All destinations</a>
-        </div>
-      </div>
-    </div>
-    <div class="journey-progress"><i id="journeyBar"></i></div>
-  </section>
-
   <!-- experiences -->
-  <section class="section night-2">
+  <section class="section night-2" style="padding-top:clamp(40px,5vw,84px)">
     <div class="wrap">
       <div class="grid g-2" style="align-items:end">
         <div><span class="eyebrow" data-reveal>Safari experiences</span><h2 class="display h-l words" data-words style="margin-top:18px">Ways to <em>meet</em> the wild</h2></div>
@@ -758,9 +808,9 @@ body.menu-open .menu-foot{opacity:1}
         <p class="lede muted" data-reveal>Start with one of our ready-made itineraries, or let us adapt every detail — dates, activities, camps — to suit you.</p>
       </div>
       <div class="trips">
-        <a class="trip feature" href="#/safaris/great-migration" data-route data-cursor="view">
+        <a class="trip" href="#/safaris/great-migration" data-route data-cursor="view">
           <div class="media"><img src="images/balloons-wide.webp" alt="" loading="lazy"><span class="days">6 days</span></div>
-          <div class="body"><span class="k">Maasai Mara · Lake Nakuru</span><h3 class="display">The Great Migration Safari</h3><p>Flamingo-lined Lake Nakuru, then the Mara at the height of the migration: river crossings, big cats, a Maasai village visit and a private bush dinner around the fire.</p><div class="foot"><span>Big Five · River crossings · Balloon option</span><span class="link">Itinerary</span></div></div>
+          <div class="body"><span class="k">Maasai Mara · Lake Nakuru</span><h3>The Great Migration Safari</h3><p>The Mara at the height of the migration: river crossings, big cats and a private bush dinner around the fire.</p><div class="foot"><span>Big Five · River crossings</span><span class="link">Itinerary</span></div></div>
         </a>
         <a class="trip" href="#/safaris/laikipia" data-route data-cursor="view">
           <div class="media"><img src="images/rhino.webp" alt="" loading="lazy"><span class="days">5 days</span></div>
@@ -769,10 +819,6 @@ body.menu-open .menu-foot{opacity:1}
         <a class="trip" href="#/safaris/northern-frontier" data-route data-cursor="view">
           <div class="media"><img src="images/ele-frame.webp" alt="" loading="lazy"><span class="days">7 days</span></div>
           <div class="body"><span class="k">Wajir · Marsabit · Turkana</span><h3>The Northern Frontier Adventure</h3><p>Kenya’s least-visited, most captivating regions — from Marsabit’s forested highlands to the Jade Sea of Lake Turkana.</p><div class="foot"><span>Expedition · Culture</span><span class="link">Itinerary</span></div></div>
-        </a>
-        <a class="trip" href="#/safaris/ultimate-kenya" data-route data-cursor="view">
-          <div class="media"><img src="images/elephants-sunset.webp" alt="" loading="lazy"><span class="days">10 days</span></div>
-          <div class="body"><span class="k">Samburu · Amboseli · Tsavo · Diani</span><h3>The Ultimate Kenya North &amp; South</h3><p>An epic arc from the rugged north to Amboseli’s elephants, Tsavo’s red earth and the white sands of Diani.</p><div class="foot"><span>Bush &amp; beach</span><span class="link">Itinerary</span></div></div>
         </a>
       </div>
       <div style="margin-top:44px;display:flex;justify-content:center" data-reveal><a class="btn btn-ox" href="#/safaris" data-route>View all journeys</a></div>
@@ -825,7 +871,7 @@ body.menu-open .menu-foot{opacity:1}
   </section>
 
   <!-- reviews -->
-  <section class="section reviews">
+  <section class="section reviews" style="padding-bottom:clamp(44px,5vw,88px)">
     <div class="wrap" style="margin-bottom:44px">
       <span class="eyebrow" data-reveal>Guest stories</span>
       <h2 class="display h-l words" data-words style="margin-top:18px">In their <em>own</em> words</h2>
@@ -836,6 +882,30 @@ body.menu-open .menu-foot{opacity:1}
       <div class="review"><span class="stars">★★★★★</span><q>I recently had the pleasure of traveling to the magnificent Masai Mara, and I owe the incredible experience…</q><div class="who"><span><b>Abhijeet Adatia</b>Google review</span><span>Mar 2025</span></div></div>
       <div class="review"><span class="stars">★★★★★</span><q>When I planned my trip to Kenya, I did not intend to do any safaris because I did not see the appeal…</q><div class="who"><span><b>Vikas Solanki</b>Google review</span><span>Mar 2025</span></div></div>
       <div class="review"><span class="stars">★★★★★</span><q>Got to see a leopard at Tsavo thanks to Sarabi Savanna.</q><div class="who"><span><b>Neel Vadgama</b>Google review</span><span>Mar 2025</span></div></div>
+    </div>
+    <div class="wrap" style="margin-top:clamp(30px,3.5vw,48px);text-align:center"><a class="link" href="https://search.google.com/local/reviews?placeid=ChIJM_wPyx8XLxgRS03zC0jbmdU" target="_blank" rel="noopener" data-reveal>Read our reviews on Google <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <!-- instagram -->
+  <section class="section insta" style="padding-top:clamp(40px,5vw,84px)">
+    <div class="wrap insta-head">
+      <div>
+        <span class="eyebrow" data-reveal>From the wild</span>
+        <h2 class="display h-l words" data-words style="margin-top:16px">Straight from the <em>savanna</em></h2>
+        <p class="lede" data-reveal style="margin-top:16px;color:rgba(245,239,227,.85)">Dispatches from the plains and the people who know them — follow the journey at <a href="https://www.instagram.com/sarabisavanna/" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">@sarabisavanna</a>.</p>
+      </div>
+      <a class="btn btn-ghost" href="https://www.instagram.com/sarabisavanna/" target="_blank" rel="noopener" data-reveal>Follow on Instagram <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    </div>
+    <div class="wrap insta-grid" data-reveal>
+      <a class="insta-tile" href="https://www.instagram.com/sarabisavanna/" target="_blank" rel="noopener"><img src="images/lion.webp" alt="Follow Sarabi Savanna on Instagram" loading="lazy"><svg class="insta-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="insta-tile" href="https://www.instagram.com/sarabisavanna/" target="_blank" rel="noopener"><img src="images/leopard-cub.webp" alt="Follow Sarabi Savanna on Instagram" loading="lazy"><svg class="insta-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="insta-tile" href="https://www.instagram.com/sarabisavanna/" target="_blank" rel="noopener"><img src="images/ele-green.webp" alt="Follow Sarabi Savanna on Instagram" loading="lazy"><svg class="insta-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="insta-tile" href="https://www.instagram.com/sarabisavanna/" target="_blank" rel="noopener"><img src="images/balloons.webp" alt="Follow Sarabi Savanna on Instagram" loading="lazy"><svg class="insta-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="insta-tile" href="https://www.instagram.com/sarabisavanna/" target="_blank" rel="noopener"><img src="images/elephants-sunset.webp" alt="Follow Sarabi Savanna on Instagram" loading="lazy"><svg class="insta-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="insta-tile" href="https://www.instagram.com/sarabisavanna/" target="_blank" rel="noopener"><img src="images/diani.webp" alt="Follow Sarabi Savanna on Instagram" loading="lazy"><svg class="insta-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="insta-tile" href="https://www.instagram.com/sarabisavanna/" target="_blank" rel="noopener"><img src="images/cheetah-vehicle.webp" alt="Follow Sarabi Savanna on Instagram" loading="lazy"><svg class="insta-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="insta-tile" href="https://www.instagram.com/sarabisavanna/" target="_blank" rel="noopener"><img src="images/maasai.webp" alt="Follow Sarabi Savanna on Instagram" loading="lazy"><svg class="insta-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="insta-tile" href="https://www.instagram.com/sarabisavanna/" target="_blank" rel="noopener"><img src="images/eagle.webp" alt="Follow Sarabi Savanna on Instagram" loading="lazy"><svg class="insta-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
     </div>
   </section>
 
@@ -1313,6 +1383,52 @@ body.menu-open .menu-foot{opacity:1}
   </section>
 </section>
 
+<!-- ===================================================== LAND CRUISER -->
+<section class="view" data-view="landcruiser">
+  <div class="page-hero">
+    <img src="images/landcruiser-hero.webp" alt="Guests in a branded Sarabi Savanna Land Cruiser watching a lioness on the plains" style="object-position:center 42%">
+    <div class="wrap">
+      <span class="crumbs"><a href="#/" data-route>Home</a> &nbsp;/&nbsp; Our Land Cruiser</span>
+      <h1 class="display h-xl words" data-words>Our <em>Land Cruiser</em></h1>
+      <p class="lede" style="color:rgba(245,239,227,.85)">Every journey is explored in a custom, open-sided 4&times;4 — built for comfort, unobstructed game viewing and the wild, beautiful roads of the bush.</p>
+    </div>
+  </div>
+
+  <section class="section paper">
+    <div class="wrap lc-grid">
+      <div class="lc-viewer" data-reveal>
+        <model-viewer src="images/landcruiser.glb" alt="Interactive 3D model of a Sarabi Savanna safari Land Cruiser" camera-controls auto-rotate auto-rotate-delay="0" rotation-per-second="18deg" interaction-prompt="none" shadow-intensity="1" exposure="1.05" camera-orbit="35deg 78deg auto" ar ar-modes="webxr scene-viewer quick-look" loading="lazy"></model-viewer>
+        <span class="lc-hint">Drag to rotate &middot; scroll to zoom</span>
+      </div>
+      <div class="lc-text">
+        <span class="eyebrow" data-reveal>Built for the wild</span>
+        <h2 class="display h-m words" data-words>A window seat, <em>every</em> time</h2>
+        <p data-reveal>Our fleet of 4x4 Land Cruisers is rugged, expertly maintained and designed for the wild — comfortable seating, panoramic windows for uninterrupted wildlife viewing, communication systems for your safety, and special lighting for seamless night game drives.</p>
+        <ul class="lc-list stagger" data-reveal="stagger">
+          <li>Pop-up roof for 360&deg; game viewing</li>
+          <li>A window seat guaranteed for every guest</li>
+          <li>Charging points and a stocked cool box</li>
+          <li>Night-drive lighting for after-dark game viewing</li>
+          <li>Your own expert driver-guide</li>
+          <li>Maasai blankets for chilly morning drives</li>
+        </ul>
+        <div data-reveal style="margin-top:8px"><a class="btn btn-ox" href="#/plan" data-route>Plan your safari</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" style="min-height:60svh">
+    <img src="images/lion-wide.webp" alt="" loading="lazy" data-parallax="0.15">
+    <div class="wrap">
+      <span class="eyebrow no-rule" data-reveal>Ready when you are</span>
+      <h2 class="display h-l words" data-words>Your safari, your <em>vehicle</em></h2>
+      <div class="hero-cta" data-reveal style="margin-top:8px;justify-content:center"><a class="btn btn-gold" href="#/plan" data-route>Enquire now</a><a class="btn btn-ghost" href="#/about" data-route>About us</a></div>
+    </div>
+  </section>
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+</section>
+
 </main>
 
 <footer class="footer">
@@ -1323,7 +1439,7 @@ body.menu-open .menu-foot{opacity:1}
         <p>A premier safari house based in the heart of Nairobi, offering tailor-made wildlife and adventure experiences across Kenya and Tanzania for travellers from around the globe.</p>
         <div class="badge"><b>TRA</b>Tourism Regulatory Authority · Kenya</div>
       </div>
-      <div><h5>Explore</h5><ul><li><a href="#/destinations" data-route>Destinations</a></li><li><a href="#/safaris" data-route>Safaris &amp; journeys</a></li><li><a href="#/about" data-route>Our story</a></li><li><a href="#/plan" data-route>Plan your safari</a></li></ul></div>
+      <div><h5>Explore</h5><ul><li><a href="#/destinations" data-route>Destinations</a></li><li><a href="#/safaris" data-route>Safaris &amp; journeys</a></li><li><a href="#/about" data-route>Our story</a></li><li><a href="#/landcruiser" data-route>Our Land Cruiser</a></li><li><a href="#/plan" data-route>Plan your safari</a></li></ul></div>
       <div><h5>Journeys</h5><ul><li><a href="#/safaris/great-migration" data-route>Great Migration Safari</a></li><li><a href="#/safaris/laikipia" data-route>Laikipia &amp; Ol Pejeta</a></li><li><a href="#/safaris/northern-frontier" data-route>Northern Frontier</a></li><li><a href="#/safaris/ultimate-kenya" data-route>Ultimate Kenya</a></li><li><a href="#/safaris/south-coast" data-route>South Coast Escape</a></li></ul></div>
       <div><h5>Contact</h5><ul><li><a href="tel:+254708010499">+254 708 010 499</a></li><li><a href="https://wa.me/254708010499" target="_blank" rel="noopener">WhatsApp us</a></li><li><a href="mailto:info@sarabisavanna.com">info@sarabisavanna.com</a></li><li>2nd Floor, Apricot Suites, Parklands<br>P.O. Box 42902-00100, Nairobi</li><li>Mon – Sat, 8:00 – 18:00 EAT</li></ul></div>
     </div>
@@ -1446,7 +1562,7 @@ if(matchMedia('(pointer:fine)').matches&&!reduced){
 
 /* ---------- router ---------- */
 const views={}; $$('.view').forEach(v=>views[v.dataset.view]=v);
-const titles={home:'Sarabi Savanna — Luxury safaris in Kenya & Tanzania',destinations:'Destinations — Sarabi Savanna',safaris:'Safaris & Journeys — Sarabi Savanna',about:'Our Story — Sarabi Savanna',plan:'Plan Your Safari — Sarabi Savanna'};
+const titles={home:'Sarabi Savanna — Luxury safaris in Kenya & Tanzania',destinations:'Destinations — Sarabi Savanna',safaris:'Safaris & Journeys — Sarabi Savanna',about:'Our Story — Sarabi Savanna',landcruiser:'Our Land Cruiser — Sarabi Savanna',plan:'Plan Your Safari — Sarabi Savanna'};
 let current='home', ctx=null, transitioning=false;
 function parse(){ const h=location.hash.replace(/^#\/?/,''); const [pathq]=[h]; const [path,q]=pathq.split('?'); const parts=path.split('/').filter(Boolean); return {view:parts[0]||'home',sub:parts[1]||null,q:new URLSearchParams(q||'')}; }
 const curtain=$('.curtain');
@@ -1490,14 +1606,6 @@ function initView(view){
     $$('.hero .wrap',root).forEach(w=>{ gsap.to(w,{yPercent:18,opacity:.2,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}}); });
     // horizontal journey
     if(view==='home'){
-      const mm=gsap.matchMedia();
-      mm.add('(min-width:1024px)',()=>{
-          const pin=$('#journeyPin'),track=$('#journeyTrack'),bar=$('#journeyBar');
-          const dist=()=>track.scrollWidth-innerWidth;
-          gsap.to(track,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:pin,start:'top top',end:()=>'+='+dist(),pin:true,scrub:1,anticipatePin:1,invalidateOnRefresh:true,onUpdate:s=>{bar.style.transform=`scaleX(${s.progress})`;}}});
-          $$('.dest img',track).forEach(img=>gsap.fromTo(img,{xPercent:-6},{xPercent:6,ease:'none',scrollTrigger:{trigger:pin,start:'top top',end:()=>'+='+dist(),scrub:true}}));
-        });
-      mm.add('(max-width:1023px)',()=>{ const pin=$('#journeyPin'),bar=$('#journeyBar'); pin.addEventListener('scroll',()=>{bar.style.transform=`scaleX(${pin.scrollLeft/(pin.scrollWidth-pin.clientWidth)})`;},{passive:true}); });
       // trips subtle rise
       gsap.utils.toArray('.trip').forEach((t,i)=>{ gsap.from(t,{y:40,opacity:0,duration:1,ease:'power3.out',delay:(i%3)*.1,scrollTrigger:{trigger:t,start:'top 88%',once:true},onComplete:()=>gsap.set(t,{clearProps:'transform,opacity'})}); });
     }

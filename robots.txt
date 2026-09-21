@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sarabisavanna28.github.io/sarabi-savanna/sitemap.xml
