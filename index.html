@@ -1,0 +1,1641 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Sarabi Savanna — Luxury safaris in Kenya & Tanzania">
+<meta property="og:description" content="Tailor-made luxury safaris across Kenya and Tanzania, crafted in Nairobi. Where wilderness meets wonder.">
+<meta property="og:image" content="images/hero.webp">
+<meta name="theme-color" content="#1A1614">
+<link rel="icon" type="image/png" href="images/logo-mark.png">
+<title>Sarabi Savanna</title>
+<meta name="description" content="Sarabi Savanna — tailor-made luxury safaris across Kenya and Tanzania, crafted from Nairobi. Where wilderness meets wonder.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Figtree:wght@300;400;500;600&display=swap">
+<style>
+/* ==========================================================
+   SARABI SAVANNA — design tokens
+   ========================================================== */
+:root{
+  --night:#1A1614; --night-2:#241E1A; --night-3:#2E2620;
+  --sand:#F5EFE3; --sand-2:#FBF7EE; --sand-3:#E0D4BC;
+  --ox:#6B3A1F; --ox-2:#B8593D; --ox-3:#4A2614; --clay:#B8593D;
+  --gold:#C8A663; --gold-2:#DFC08A; --gold-3:#A8863F;
+  --ink:#1A1614; --ink-2:#463B31; --ink-3:#7C6F5E;
+  --acacia:#6B7A4F;
+  --paper:var(--sand); --paper-text:var(--ink); --paper-muted:var(--ink-3);
+  --line:rgba(26,22,20,.14); --line-dark:rgba(245,239,227,.14);
+  --display:'Fraunces',Georgia,'Times New Roman',serif;
+  --body:'Figtree','Helvetica Neue',Arial,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1); --ease-2:cubic-bezier(.76,0,.24,1);
+  --nav-h:84px; --gutter:clamp(20px,4.5vw,72px); --max:1520px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--night);color:var(--sand);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;min-height:100vh}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--gold);color:var(--night)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* grain */
+body::before{content:"";position:fixed;inset:-50%;z-index:2000;pointer-events:none;opacity:.055;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");animation:grain 1.2s steps(4) infinite}
+@keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-2%,3%)}50%{transform:translate(3%,-1%)}75%{transform:translate(-1%,-3%)}100%{transform:translate(2%,2%)}}
+
+/* ---------- typography ---------- */
+.display{font-family:var(--display);font-weight:300;line-height:.98;letter-spacing:-.02em;font-variation-settings:"opsz" 144;text-wrap:balance}
+.display em,.display i{font-style:italic;font-weight:300;color:var(--gold-2)}
+.paper .display em{color:var(--ox)}
+.h-xl{font-size:clamp(46px,8.6vw,132px)}
+.h-l{font-size:clamp(40px,5.6vw,84px)}
+.h-m{font-size:clamp(32px,3.8vw,58px)}
+.h-s{font-size:clamp(26px,2.6vw,38px);line-height:1.08}
+.eyebrow{font-family:var(--body);font-weight:500;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+.eyebrow.no-rule::before{display:none}
+.paper .eyebrow{color:var(--ox-2)}
+.lede{font-size:clamp(18px,1.45vw,22px);line-height:1.6;font-weight:300;max-width:62ch}
+p{max-width:65ch}
+.muted{color:rgba(245,239,227,.68)}.paper .muted{color:var(--ink-3)}
+.serif-i{font-family:var(--display);font-style:italic;font-weight:300}
+
+/* ---------- layout ---------- */
+.wrap{width:min(100% - var(--gutter)*2,var(--max));margin-inline:auto}
+.section{padding-block:clamp(88px,11vw,180px);position:relative}
+.paper{background:var(--paper);color:var(--paper-text)}
+.paper-2{background:var(--sand-2);color:var(--paper-text)}
+.night-2{background:var(--night-2)}
+.grid{display:grid;gap:clamp(24px,3vw,56px)}
+.g-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g-12{grid-template-columns:repeat(12,minmax(0,1fr))}
+@media(max-width:960px){.g-2,.g-3,.g-4{grid-template-columns:1fr}.g-12{grid-template-columns:1fr}}
+.rule{height:1px;background:var(--line-dark)}.paper .rule{background:var(--line)}
+
+/* ---------- buttons ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;gap:14px;height:56px;padding:0 30px;border-radius:999px;font-family:var(--body);font-weight:500;font-size:13px;letter-spacing:.16em;text-transform:uppercase;overflow:hidden;isolation:isolate;transition:color .5s var(--ease),border-color .5s var(--ease),transform .5s var(--ease);white-space:nowrap}
+.btn .ic{width:18px;height:18px;transition:transform .5s var(--ease)}
+.btn:hover .ic{transform:translateX(5px)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease)}
+.btn:hover::before{transform:scaleX(1)}
+.btn-gold{background:var(--gold);color:var(--night)}.btn-gold::before{background:var(--sand-2)}
+.btn-ghost{border:1px solid rgba(245,239,227,.45);color:var(--sand)}.btn-ghost::before{background:var(--sand)}.btn-ghost:hover{color:var(--night);border-color:var(--sand)}
+.btn-ox{background:var(--ox);color:var(--sand-2)}.btn-ox::before{background:var(--night)}
+.paper .btn-ghost{border-color:rgba(26,22,20,.35);color:var(--ink)}.paper .btn-ghost::before{background:var(--ink)}.paper .btn-ghost:hover{color:var(--sand)}
+.link{position:relative;display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding-bottom:6px}
+.link::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:currentColor;transform:scaleX(1);transform-origin:right;transition:transform .5s var(--ease)}
+.link:hover::after{transform:scaleX(0);transform-origin:right;animation:linkIn .6s var(--ease) .1s forwards}
+@keyframes linkIn{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
+.link .ic{width:16px;height:16px;transition:transform .45s var(--ease)}.link:hover .ic{transform:translateX(4px)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);display:flex;align-items:center;transition:transform .6s var(--ease),background .5s,backdrop-filter .5s,height .5s var(--ease)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;width:min(100% - var(--gutter)*2,1720px)}
+.nav.is-scrolled{height:68px;background:rgba(26,22,20,.72);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);box-shadow:0 1px 0 rgba(245,239,227,.08)}
+.nav.is-hidden{transform:translateY(-100%)}
+.nav.on-paper:not(.is-scrolled){color:var(--ink)}
+.brand{display:flex;align-items:center;gap:12px;color:inherit}
+.brand img{height:40px;width:auto;transition:height .5s var(--ease)}
+.nav.is-scrolled .brand img{height:34px}
+.brand .word{font-family:var(--display);font-weight:400;font-size:22px;letter-spacing:.01em;line-height:1}
+.brand .tag{display:block;font-family:var(--body);font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;opacity:.7;margin-top:3px}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nav-links a{position:relative;padding:10px 16px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.85;transition:opacity .3s}
+.nav-links a::after{content:"";position:absolute;left:16px;right:16px;bottom:5px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.nav-links a:hover,.nav-links a.is-active{opacity:1}
+.nav-links a:hover::after,.nav-links a.is-active::after{transform:scaleX(1);transform-origin:left}
+.nav-right{display:flex;align-items:center;gap:18px}
+.nav-phone{font-size:13px;letter-spacing:.06em;font-weight:500;opacity:.85;display:inline-flex;align-items:center;gap:8px}
+.nav-phone svg{width:15px;height:15px}
+.nav .btn{height:46px;padding:0 22px;font-size:11.5px}
+.burger{display:none;width:48px;height:48px;border-radius:50%;border:1px solid rgba(245,239,227,.35);place-items:center;position:relative}
+.burger span{position:absolute;left:15px;width:18px;height:1.5px;background:currentColor;transition:transform .5s var(--ease),opacity .3s}
+.burger span:nth-child(1){top:19px}.burger span:nth-child(2){top:27px}
+.nav.on-paper:not(.is-scrolled) .burger{border-color:rgba(26,22,20,.35)}
+body.menu-open .burger span:nth-child(1){transform:translateY(4px) rotate(45deg)}
+body.menu-open .burger span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+@media(max-width:1100px){.nav-links,.nav-phone{display:none}.burger{display:grid}}
+@media(max-width:560px){.nav .btn{display:none}.brand .word{font-size:19px}.nav .brand .tag{display:none}.hero-meta{display:none}}
+
+/* mobile menu */
+.menu{position:fixed;inset:0;z-index:850;background:var(--night);color:var(--sand);display:flex;flex-direction:column;justify-content:flex-end;padding:calc(var(--nav-h) + 20px) var(--gutter) 40px;clip-path:inset(0 0 100% 0);transition:clip-path .8s var(--ease-2);pointer-events:none}
+body.menu-open .menu{clip-path:inset(0 0 0 0);pointer-events:auto}
+.menu img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32}
+.menu::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(26,22,20,.95),rgba(26,22,20,.4))}
+.menu nav{position:relative;z-index:1;display:flex;flex-direction:column;gap:2px}
+.menu nav a{font-family:var(--display);font-weight:300;font-size:clamp(40px,9vw,74px);line-height:1.05;opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.menu nav a i{font-style:normal;font-family:var(--body);font-size:11px;letter-spacing:.24em;vertical-align:super;margin-left:10px;color:var(--gold)}
+body.menu-open .menu nav a{opacity:1;transform:none}
+body.menu-open .menu nav a:nth-child(1){transition-delay:.25s}body.menu-open .menu nav a:nth-child(2){transition-delay:.31s}body.menu-open .menu nav a:nth-child(3){transition-delay:.37s}body.menu-open .menu nav a:nth-child(4){transition-delay:.43s}body.menu-open .menu nav a:nth-child(5){transition-delay:.49s}
+.menu-foot{position:relative;z-index:1;margin-top:34px;display:flex;flex-wrap:wrap;gap:14px 28px;font-size:14px;opacity:0;transition:opacity .6s .55s}
+body.menu-open .menu-foot{opacity:1}
+
+/* ---------- page transition curtain ---------- */
+.curtain{position:fixed;inset:0;z-index:950;background:var(--ox-3);pointer-events:none;clip-path:inset(100% 0 0 0);display:grid;place-items:center}
+.curtain .mark{width:min(24vw,140px);opacity:0;transform:scale(.9)}
+.curtain::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(200,166,99,.12),transparent)}
+
+/* ---------- views ---------- */
+.view{display:none}.view.is-active{display:block}
+
+/* ---------- reveals ---------- */
+[data-reveal]{opacity:0;transform:translateY(34px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+[data-reveal].is-in{opacity:1;transform:none}
+[data-reveal="fade"]{transform:none}
+[data-reveal="left"]{transform:translateX(-40px)}[data-reveal="right"]{transform:translateX(40px)}
+.stagger>*{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.stagger.is-in>*{opacity:1;transform:none}
+.stagger.is-in>*:nth-child(1){transition-delay:.05s}.stagger.is-in>*:nth-child(2){transition-delay:.15s}.stagger.is-in>*:nth-child(3){transition-delay:.25s}.stagger.is-in>*:nth-child(4){transition-delay:.35s}.stagger.is-in>*:nth-child(5){transition-delay:.45s}.stagger.is-in>*:nth-child(6){transition-delay:.55s}.stagger.is-in>*:nth-child(7){transition-delay:.65s}.stagger.is-in>*:nth-child(8){transition-delay:.75s}
+.words .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.22em .05em .16em;margin:-.22em -.05em -.16em}
+.words .w>span{display:inline-block;transform:translateY(112%);transition:transform 1.1s var(--ease)}
+.words.is-in .w>span{transform:none}
+.reveal-img{position:relative;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path 1.3s var(--ease-2)}
+.reveal-img.from-left{clip-path:inset(0 100% 0 0)}
+.reveal-img.is-in{clip-path:inset(0 0 0 0)}
+.reveal-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.22);transition:transform 1.6s var(--ease-2)}
+.reveal-img.is-in img{transform:scale(1)}
+.scrub-words .sw{opacity:.14;transition:opacity .25s linear}
+.line-draw{transform:scaleX(0);transform-origin:left;transition:transform 1.4s var(--ease-2)}.line-draw.is-in{transform:none}
+
+/* ---------- cursor ---------- */
+.cursor{position:fixed;left:0;top:0;z-index:3000;pointer-events:none;width:0;height:0;opacity:0;border-radius:50%;background:var(--gold);transform:translate(-50%,-50%);transition:width .45s var(--ease),height .45s var(--ease),opacity .35s var(--ease);display:none}
+.cursor .lab{position:absolute;inset:0;display:grid;place-items:center;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--night);opacity:0;transition:opacity .3s}
+.cursor.is-view{width:88px;height:88px;opacity:1}.cursor.is-view .lab{opacity:1}
+@media(pointer:fine){.cursor{display:block}}
+
+/* ==========================================================
+   HOME — hero
+   ========================================================== */
+.hero{position:relative;height:100svh;min-height:640px;overflow:hidden;isolation:isolate;display:flex;align-items:flex-end}
+.hero-media{position:absolute;inset:0;z-index:-2}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:60% 45%;transform:scale(1.12);animation:heroZoom 12s var(--ease) forwards}
+.hero-media img.mob{display:none}
+@media(max-width:700px){.hero-media img.desk{display:none}.hero-media img.mob{display:block;object-position:70% 40%}}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero-scrim{position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(26,22,20,.92) 0%,rgba(26,22,20,.35) 38%,rgba(26,22,20,0) 62%),linear-gradient(to right,rgba(26,22,20,.55),rgba(26,22,20,0) 55%),linear-gradient(to bottom,rgba(26,22,20,.55),transparent 22%)}
+.hero-dust{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.7}
+.hero .wrap{position:relative;padding-bottom:clamp(48px,7vh,96px);display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+.hero-title{font-size:clamp(50px,9.4vw,150px);margin:18px 0 26px}
+.hero-title .w>span{transition-duration:1.4s}
+.hero-lede{max-width:52ch;font-size:clamp(16px,1.25vw,19px);color:rgba(245,239,227,.86)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero-side{display:flex;flex-direction:column;align-items:flex-end;gap:26px;text-align:right}
+.hero-meta{display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,239,227,.7)}
+.hero-meta b{font-weight:500;color:var(--sand)}
+.scroll-cue{display:flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,239,227,.75)}
+.scroll-cue i{width:1px;height:56px;background:linear-gradient(to bottom,var(--gold),transparent);position:relative;overflow:hidden}
+.scroll-cue i::after{content:"";position:absolute;inset:0;background:var(--sand);animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{0%{transform:translateY(-100%)}60%,100%{transform:translateY(100%)}}
+.hero-fade{opacity:0;transform:translateY(16px);animation:fadeUp 1.2s var(--ease) forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero-side{align-items:flex-start;text-align:left;flex-direction:row;justify-content:space-between;width:100%}}
+
+/* ticker */
+.ticker{border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);overflow:hidden;padding:18px 0;background:var(--night)}
+.ticker-track{display:flex;gap:64px;width:max-content;animation:ticker 48s linear infinite;will-change:transform}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track span{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(18px,1.7vw,24px);color:rgba(245,239,227,.7);display:flex;align-items:center;gap:64px;white-space:nowrap}
+.ticker-track span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+/* ---------- explore chooser ---------- */
+.explore{position:relative;min-height:92svh;overflow:hidden;isolation:isolate;color:var(--sand);display:grid;place-items:center}
+.explore-bg{position:absolute;inset:0;z-index:-3}
+.explore-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s var(--ease)}
+.explore-slide.is-active{opacity:1}
+.explore-slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 8s var(--ease)}
+.explore-slide.is-active img{transform:scale(1)}
+.explore-scrim{position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at center,rgba(26,22,20,.28),rgba(26,22,20,.72)),linear-gradient(to top,rgba(26,22,20,.85),transparent 42%,rgba(26,22,20,.35))}
+.explore-maps{position:absolute;inset:0;z-index:-1;display:grid;place-items:center;pointer-events:none}
+.explore-map{position:absolute;width:min(58vh,560px);height:min(58vh,560px);opacity:0;transform:scale(.92) rotate(-2deg);transition:opacity 1.1s var(--ease),transform 1.4s var(--ease)}
+.explore-map.is-active{opacity:1;transform:none}
+.explore-map .land{stroke:rgba(245,239,227,.5);stroke-width:1.4;stroke-linejoin:round;fill:rgba(245,239,227,.03)}
+.explore-map .arc{stroke:var(--gold);stroke-width:1;stroke-dasharray:2 7;opacity:.5;stroke-linecap:round}
+.explore-map .pin{fill:var(--gold)}
+.explore-map .halo{fill:none;stroke:var(--gold);stroke-width:1.2;transform-origin:center;transform-box:fill-box;animation:halo 2.6s var(--ease) infinite}
+.explore-inner{position:relative;display:grid;justify-items:center;gap:22px;text-align:center;padding:0 var(--gutter)}
+.explore-names{position:relative;width:min(90vw,900px);height:clamp(120px,20vh,200px)}
+.explore-name{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--display);font-weight:300;letter-spacing:-.02em;color:var(--sand);white-space:nowrap;line-height:1;opacity:.3;font-size:clamp(30px,5vw,60px);transition:left .95s var(--ease),font-size .95s var(--ease),opacity .95s var(--ease),color .6s;cursor:pointer;text-shadow:0 2px 40px rgba(26,22,20,.4)}
+.explore-name::after{content:"";position:absolute;left:50%;bottom:-14px;width:44px;height:1px;background:var(--gold);transform:translateX(-50%) scaleX(0);transition:transform .7s var(--ease) .2s}
+.explore-name:hover{opacity:.7}
+.explore[data-active="kenya"] .explore-name[data-select="kenya"],
+.explore[data-active="tanzania"] .explore-name[data-select="tanzania"]{opacity:1;left:50%;font-size:clamp(52px,10vw,140px)}
+.explore[data-active="kenya"] .explore-name[data-select="kenya"]::after,
+.explore[data-active="tanzania"] .explore-name[data-select="tanzania"]::after{transform:translateX(-50%) scaleX(1)}
+.explore[data-active="kenya"] .explore-name[data-select="tanzania"]{left:calc(100% - 4ch);opacity:.32}
+.explore[data-active="tanzania"] .explore-name[data-select="kenya"]{left:4ch;opacity:.32}
+.explore-cta{margin-top:8px;background:rgba(245,239,227,.08);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.explore-switch{display:none;align-items:center;gap:10px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:rgba(245,239,227,.85);padding:8px}
+.explore-switch svg{width:16px;height:16px}
+.explore-caption{position:absolute;left:var(--gutter);bottom:clamp(28px,5vh,54px);display:flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,227,.8);z-index:1}
+.explore-caption svg{width:16px;height:16px;color:var(--gold)}
+.explore-caption span{transition:opacity .5s}
+.explore-dots{position:absolute;right:var(--gutter);bottom:clamp(28px,5vh,54px);display:flex;gap:10px;z-index:1}
+.explore-dots i{width:8px;height:8px;border-radius:50%;background:rgba(245,239,227,.3);transition:background .5s,transform .5s;cursor:pointer}
+.explore-dots i.is-on{background:var(--gold);transform:scale(1.15)}
+/* drag-to-swap */
+.explore{touch-action:pan-y;cursor:grab}
+.explore.dragging{cursor:grabbing}
+.explore-inner{z-index:1}
+.explore-link{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .45s var(--ease)}
+.explore.dragging .explore-link{opacity:1}
+.explore-link path{fill:none;stroke:var(--gold);stroke-width:2;stroke-dasharray:2 8;stroke-linecap:round;filter:drop-shadow(0 1px 4px rgba(26,22,20,.6))}
+.explore-travel{fill:var(--gold);filter:drop-shadow(0 0 8px rgba(201,162,75,.9))}
+.explore.dragging .explore-slide,.explore.dragging .explore-map,.explore.dragging .explore-name{transition:none}
+.explore.dragging .explore-map{transform:none}
+.explore-hint{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,239,227,.55);margin-top:2px;transition:opacity .4s;pointer-events:none}
+.explore.dragging .explore-hint{opacity:0}
+@media(max-width:640px){
+  .explore-name[data-select]{position:static;transform:none;transition:opacity .5s}
+  .explore[data-active] .explore-name{display:none}
+  .explore[data-active="kenya"] .explore-name[data-select="kenya"],
+  .explore[data-active="tanzania"] .explore-name[data-select="tanzania"]{display:block;position:static;transform:none;font-size:clamp(46px,15vw,72px)}
+  .explore-names{height:auto;width:auto}
+  .explore-switch{display:inline-flex}
+  .explore-caption{display:none}
+}
+
+/* ---------- manifesto ---------- */
+.manifesto .manifesto-top{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(40px,7vw,120px);align-items:start}
+.manifesto-text{font-family:var(--display);font-weight:300;font-size:clamp(27px,3.2vw,50px);line-height:1.22;letter-spacing:-.01em}
+.manifesto-aside{display:grid;gap:36px;padding-top:12px}
+.fact{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;padding-top:22px;border-top:1px solid var(--line)}
+.fact .n{font-family:var(--display);font-weight:300;font-size:34px;line-height:1;color:var(--ox);min-width:64px;font-variation-settings:"opsz" 144}
+.fact b{display:block;font-weight:600;font-size:14px;letter-spacing:.04em;margin-bottom:4px}
+.fact p{font-size:15px;color:var(--ink-2)}
+.manifesto-img{margin-top:clamp(56px,8vw,120px);display:grid;grid-template-columns:5fr 4fr 3fr;gap:clamp(12px,1.6vw,24px);align-items:end}
+.manifesto-img figure{overflow:hidden;display:grid;grid-template-rows:1fr auto}.manifesto-img .reveal-img{height:100%;min-height:0}
+.manifesto-img figure:nth-child(1){aspect-ratio:4/5}.manifesto-img figure:nth-child(2){aspect-ratio:3/4;margin-bottom:12%}.manifesto-img figure:nth-child(3){aspect-ratio:4/5;margin-bottom:26%}
+.manifesto-img img{width:100%;height:100%;object-fit:cover}
+.manifesto-img figcaption{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-top:12px}
+@media(max-width:960px){.manifesto .wrap{grid-template-columns:1fr}.manifesto-img{grid-template-columns:1fr 1fr}.manifesto-img figure:nth-child(3){display:none}}
+
+/* ---------- destinations (horizontal journey) ---------- */
+.journey{background:var(--night);color:var(--sand);overflow:hidden}
+.journey-head{padding:clamp(80px,10vw,150px) 0 40px;display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap}
+.journey-pin{height:100svh;display:flex;align-items:center;overflow:hidden}
+.journey-track{display:flex;width:max-content;gap:clamp(16px,2vw,32px);padding-inline:var(--gutter);will-change:transform}
+.dest{position:relative;flex:0 0 auto;width:clamp(300px,34vw,520px);aspect-ratio:3/4;overflow:hidden;background:var(--night-3);isolation:isolate;color:var(--sand)}
+.dest.wide{width:clamp(340px,52vw,780px);aspect-ratio:16/11}
+.dest img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease);will-change:transform}
+.dest:hover img{transform:scale(1.07)}
+.dest::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(26,22,20,.9),rgba(26,22,20,.15) 55%,rgba(26,22,20,.2));transition:opacity .6s}
+.dest-body{position:absolute;inset:0;z-index:1;padding:clamp(22px,2.4vw,36px);display:flex;flex-direction:column;justify-content:flex-end;gap:10px}
+.dest-body .k{position:absolute;top:clamp(22px,2.4vw,36px);left:clamp(22px,2.4vw,36px);right:clamp(22px,2.4vw,36px);display:flex;justify-content:space-between;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,239,227,.8)}
+.dest-body h3{font-family:var(--display);font-weight:300;font-size:clamp(30px,3vw,46px);line-height:1;letter-spacing:-.01em}
+.dest-body p{font-size:14.5px;line-height:1.55;color:rgba(245,239,227,.82);max-height:0;opacity:0;overflow:hidden;transition:max-height .8s var(--ease),opacity .6s .1s}
+.dest:hover .dest-body p,.dest.is-open .dest-body p{max-height:140px;opacity:1}
+.dest-body .link{margin-top:4px;color:var(--gold)}
+.dest-end{flex:0 0 auto;width:clamp(280px,30vw,440px);display:flex;flex-direction:column;justify-content:center;gap:22px;padding-right:var(--gutter)}
+.journey-progress{height:1px;background:var(--line-dark);margin:0 var(--gutter) clamp(60px,8vw,120px);position:relative}
+.journey-progress i{position:absolute;left:0;top:0;height:100%;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left}
+@media(max-width:1023px){.journey-pin{height:auto;display:block;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}.journey-pin::-webkit-scrollbar{display:none}.journey-track{padding-bottom:20px}.dest{scroll-snap-align:start;width:min(82vw,420px)}.dest.wide{width:min(82vw,420px);aspect-ratio:3/4}.dest-body p{max-height:140px;opacity:1}.dest-end{scroll-snap-align:start;width:min(82vw,420px)}}
+
+/* ---------- experiences ---------- */
+.exp-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(14px,1.8vw,28px);margin-top:clamp(40px,5vw,72px)}
+.exp{position:relative;overflow:hidden;isolation:isolate;color:var(--sand);display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(20px,2.2vw,34px);min-height:360px}
+.exp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.4s var(--ease),filter 1s}
+.exp::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(26,22,20,.88),rgba(26,22,20,.05) 60%);transition:opacity .6s}
+.exp:hover img{transform:scale(1.06)}
+.exp .num{position:absolute;top:24px;right:24px;font-family:var(--display);font-style:italic;font-size:20px;color:var(--gold-2)}
+.exp h3{font-family:var(--display);font-weight:300;font-size:clamp(26px,2.3vw,36px);line-height:1.05;margin-bottom:8px}
+.exp p{font-size:14.5px;line-height:1.55;color:rgba(245,239,227,.82);max-width:36ch}
+.exp .link{margin-top:14px;color:var(--gold);opacity:0;transform:translateY(8px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.exp:hover .link{opacity:1;transform:none}
+.exp.a{grid-column:span 7;min-height:520px}.exp.b{grid-column:span 5;min-height:520px}.exp.c{grid-column:span 4}.exp.d{grid-column:span 4}.exp.e{grid-column:span 4}
+@media(max-width:960px){.exp{grid-column:span 12!important;min-height:380px!important}.exp .link{opacity:1;transform:none}}
+
+/* ---------- journeys (trips) ---------- */
+.trips{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2vw,32px);margin-top:clamp(40px,5vw,72px)}
+.trip{position:relative;display:flex;flex-direction:column;background:var(--sand-2);border:1px solid var(--line);transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.trip:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(26,22,20,.45)}
+.trip .media{aspect-ratio:4/3;overflow:hidden;position:relative}
+.trip .media img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.trip:hover .media img{transform:scale(1.06)}
+.trip .days{position:absolute;top:16px;left:16px;background:var(--night);color:var(--sand);font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:8px 12px}
+.trip .body{padding:26px 26px 30px;display:flex;flex-direction:column;gap:12px;flex:1}
+.trip .body .k{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ox-2)}
+.trip h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,1.8vw,29px);line-height:1.1;letter-spacing:-.01em}
+.trip p{font-size:15px;color:var(--ink-2);line-height:1.55}
+.trip .foot{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--ink-3)}
+.trip.feature{grid-column:span 3;flex-direction:row;background:var(--night);color:var(--sand);border:0}
+.trip.feature .media{flex:0 0 58%;aspect-ratio:auto;min-height:440px}
+.trip.feature .body{padding:clamp(30px,4vw,64px)}
+.trip.feature .body .k{color:var(--gold)}.trip.feature p{color:rgba(245,239,227,.8)}.trip.feature .foot{border-color:var(--line-dark);color:rgba(245,239,227,.6)}
+.trip.feature h3{font-size:clamp(32px,3.4vw,54px);font-weight:300}
+@media(max-width:960px){.trips{grid-template-columns:1fr}.trip.feature{grid-column:span 1;flex-direction:column}.trip.feature .media{min-height:300px}}
+
+/* ---------- why (parallax) ---------- */
+.why{position:relative;overflow:hidden;color:var(--sand);isolation:isolate}
+.why-bg{position:absolute;inset:-12% 0;z-index:-2}
+.why-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.why::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to right,rgba(26,22,20,.94) 0%,rgba(26,22,20,.78) 45%,rgba(26,22,20,.62) 100%)}
+.why .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,100px)}
+.pillars{display:grid;gap:0}
+.pillar{padding:26px 0;border-top:1px solid var(--line-dark);display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start}
+.pillar:last-child{border-bottom:1px solid var(--line-dark)}
+.pillar .ic{width:38px;height:38px;color:var(--gold)}
+.pillar h4{font-family:var(--display);font-weight:400;font-size:24px;margin-bottom:6px;line-height:1.1}
+.pillar p{font-size:15px;color:rgba(245,239,227,.8)}
+.usp{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}
+.usp li{list-style:none;display:flex;gap:12px;align-items:start;font-size:14.5px;color:rgba(245,239,227,.85)}
+.usp li::before{content:"";flex:0 0 6px;height:6px;border-radius:50%;background:var(--gold);margin-top:9px}
+@media(max-width:960px){.why .wrap{grid-template-columns:1fr}.usp{grid-template-columns:1fr}}
+
+/* ---------- process ---------- */
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(16px,2vw,30px);margin-top:clamp(40px,5vw,72px);position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:22px;height:1px;background:var(--line)}
+.steps .line{position:absolute;left:0;right:0;top:22px;height:1px;background:var(--ox)}
+.step{position:relative;padding-top:52px}
+.step .dot{position:absolute;top:16px;left:0;width:13px;height:13px;border-radius:50%;background:var(--sand);border:1px solid var(--ox)}
+.step .n{font-family:var(--display);font-style:italic;font-size:15px;color:var(--ox-2);margin-bottom:8px}
+.step h4{font-family:var(--display);font-weight:400;font-size:22px;line-height:1.1;margin-bottom:8px}
+.step p{font-size:14.5px;color:var(--ink-2)}
+@media(max-width:960px){.steps{grid-template-columns:1fr 1fr}.steps::before,.steps .line{display:none}.step{padding-top:0;padding-left:26px}.step .dot{top:8px}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* ---------- testimonials ---------- */
+.reviews{overflow:hidden}
+.review-track{display:flex;gap:clamp(16px,2vw,28px);width:max-content;animation:ticker 70s linear infinite;padding-block:6px}
+.reviews:hover .review-track{animation-play-state:paused}
+.review{flex:0 0 auto;width:min(84vw,420px);padding:34px 34px 28px;background:var(--night-2);border:1px solid var(--line-dark);display:flex;flex-direction:column;gap:18px}
+.review .stars{color:var(--gold);letter-spacing:.2em;font-size:13px}
+.review q{font-family:var(--display);font-weight:300;font-size:20px;line-height:1.35;quotes:"“" "”"}
+.review .who{margin-top:auto;display:flex;justify-content:space-between;align-items:end;font-size:12.5px;letter-spacing:.06em;color:rgba(245,239,227,.7)}
+.review .who b{display:block;color:var(--sand);font-weight:500;letter-spacing:.02em;font-size:14px}
+
+/* ---------- CTA band ---------- */
+.cta-band{position:relative;min-height:80svh;display:grid;place-items:center;text-align:center;overflow:hidden;isolation:isolate;color:var(--sand)}
+.cta-band img{position:absolute;inset:-10% 0;width:100%;height:120%;object-fit:cover;z-index:-2;object-position:center 30%}
+.cta-band::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at center,rgba(26,22,20,.35),rgba(26,22,20,.8))}
+.cta-band .wrap{display:grid;justify-items:center;gap:26px;padding-block:clamp(90px,12vw,160px)}
+.cta-band .h-l{max-width:14ch}
+.cta-band .phone{font-family:var(--display);font-size:clamp(22px,2.6vw,36px);font-weight:300;letter-spacing:.02em}
+
+/* ---------- footer ---------- */
+.footer{background:var(--night);color:var(--sand);border-top:1px solid var(--line-dark);padding:clamp(70px,8vw,120px) 0 30px}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:clamp(30px,4vw,64px)}
+.footer h5{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:600}
+.footer ul{list-style:none;display:grid;gap:10px;font-size:15px}
+.footer ul a{opacity:.8;transition:opacity .3s,color .3s}.footer ul a:hover{opacity:1;color:var(--gold-2)}
+.footer .about p{font-size:15px;color:rgba(245,239,227,.72);margin:18px 0 22px;max-width:40ch}
+.badge{display:inline-flex;align-items:center;gap:12px;padding:10px 14px;border:1px solid var(--line-dark);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,227,.8)}
+.badge b{font-family:var(--display);font-size:18px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--sand)}
+.footer-word{margin-top:clamp(56px,8vw,110px);font-family:var(--display);font-weight:300;font-size:clamp(56px,13.4vw,220px);line-height:.9;letter-spacing:-.03em;color:rgba(245,239,227,.09);white-space:nowrap;overflow:hidden;user-select:none}
+.footer-bottom{margin-top:26px;padding-top:22px;border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 30px;font-size:12.5px;color:rgba(245,239,227,.55)}
+.footer-bottom a:hover{color:var(--gold-2)}
+@media(max-width:960px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.footer-top{grid-template-columns:1fr}}
+
+/* ==========================================================
+   INNER PAGES
+   ========================================================== */
+.page-hero{position:relative;min-height:74svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;color:var(--sand);padding-top:var(--nav-h)}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1.1);animation:heroZoom 9s var(--ease) forwards}
+.page-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(26,22,20,.95),rgba(26,22,20,.25) 55%,rgba(26,22,20,.3))}
+.page-hero .wrap{padding-bottom:clamp(44px,6vw,80px);display:grid;gap:18px}
+.page-hero .h-xl{max-width:12ch}
+.crumbs{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,239,227,.7)}
+.crumbs a:hover{color:var(--gold-2)}
+
+/* destinations page */
+.region{padding-block:clamp(70px,9vw,140px)}
+.region-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,90px);align-items:end;margin-bottom:clamp(40px,5vw,72px)}
+@media(max-width:960px){.region-head{grid-template-columns:1fr}}
+.map-wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,80px);align-items:start}
+.map-sticky{position:sticky;top:110px}
+.kmap{width:100%;height:auto}
+.kmap .land{fill:rgba(245,239,227,.06);stroke:rgba(245,239,227,.35);stroke-width:1.2;stroke-linejoin:round}
+.kmap .pin{cursor:pointer}
+.kmap .pin circle.c{fill:var(--gold);transition:r .4s var(--ease)}
+.kmap .pin circle.halo{fill:none;stroke:var(--gold);stroke-width:1;opacity:.5;transform-origin:center;transform-box:fill-box;animation:halo 2.6s var(--ease) infinite}
+.kmap .pin text{font-family:var(--body);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;fill:rgba(245,239,227,.8);transition:fill .3s}
+.kmap .pin.is-on circle.c{r:6}.kmap .pin.is-on text{fill:var(--gold-2)}
+@keyframes halo{0%{transform:scale(.4);opacity:.7}100%{transform:scale(2.4);opacity:0}}
+.places{display:grid;gap:clamp(40px,5vw,70px)}
+.place{display:grid;grid-template-columns:1fr;gap:22px;scroll-margin-top:120px}
+.place .media{aspect-ratio:16/10;overflow:hidden}
+.place h3{font-family:var(--display);font-weight:300;font-size:clamp(32px,3.2vw,50px);line-height:1;letter-spacing:-.01em}
+.place .meta{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.place p{color:rgba(245,239,227,.8)}
+.place ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.place ul li{font-size:12.5px;letter-spacing:.06em;padding:8px 12px;border:1px solid var(--line-dark);color:rgba(245,239,227,.85)}
+@media(max-width:960px){.map-wrap{grid-template-columns:1fr}.map-sticky{position:relative;top:0;max-width:520px}}
+.seasons{margin-top:clamp(60px,8vw,110px);display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.season{background:var(--sand-2);padding:28px 24px;display:grid;gap:8px;transition:background .4s}
+.season:hover{background:var(--sand)}
+.season .m{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ox-2)}
+.season h4{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.1}
+.season p{font-size:14px;color:var(--ink-2)}
+.season .t{font-family:var(--display);font-size:34px;font-weight:300;color:var(--ink);font-variant-numeric:tabular-nums}
+.season .t small{font-family:var(--body);font-size:12px;letter-spacing:.1em;color:var(--ink-3);margin-left:6px}
+@media(max-width:960px){.seasons{grid-template-columns:1fr 1fr}}@media(max-width:560px){.seasons{grid-template-columns:1fr}}
+
+/* safaris page */
+.styles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,30px);margin-top:clamp(40px,5vw,72px)}
+.style{position:relative;aspect-ratio:3/4;overflow:hidden;color:var(--sand);isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;padding:28px}
+.style img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.5s var(--ease)}
+.style::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(26,22,20,.9),rgba(26,22,20,.1) 60%)}
+.style:hover img{transform:scale(1.07)}
+.style h3{font-family:var(--display);font-weight:300;font-size:clamp(28px,2.4vw,38px);line-height:1;margin-bottom:8px}
+.style p{font-size:14.5px;color:rgba(245,239,227,.82)}
+@media(max-width:960px){.styles{grid-template-columns:1fr 1fr}}@media(max-width:560px){.styles{grid-template-columns:1fr}.style{aspect-ratio:4/5}}
+.itin{border-top:1px solid var(--line);scroll-margin-top:100px}
+.itin:last-child{border-bottom:1px solid var(--line)}
+.itin-head{width:100%;display:grid;grid-template-columns:110px 1fr auto;gap:clamp(16px,3vw,48px);align-items:center;padding:clamp(24px,3vw,40px) 0;text-align:left;transition:padding .5s var(--ease)}
+.itin-head .d{font-family:var(--display);font-weight:300;font-size:clamp(34px,4vw,60px);line-height:1;color:var(--ox);font-variant-numeric:tabular-nums}
+.itin-head .d small{display:block;font-family:var(--body);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin-top:4px}
+.itin-head h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,2.6vw,40px);line-height:1.1;letter-spacing:-.01em}
+.itin-head .route{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-top:8px}
+.itin-head .plus{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;position:relative;transition:background .4s,border-color .4s}
+.itin-head .plus::before,.itin-head .plus::after{content:"";position:absolute;background:currentColor;transition:transform .5s var(--ease)}
+.itin-head .plus::before{width:16px;height:1.5px}.itin-head .plus::after{width:1.5px;height:16px}
+.itin.is-open .plus{background:var(--ox);border-color:var(--ox);color:var(--sand)}
+.itin.is-open .plus::after{transform:rotate(90deg)}
+.itin-head:hover .plus{border-color:var(--ox)}
+.itin-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .8s var(--ease)}
+.itin.is-open .itin-body{grid-template-rows:1fr}
+.itin-body>div{overflow:hidden}
+.itin-inner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(30px,5vw,80px);padding:0 0 clamp(30px,4vw,56px) 110px}
+.days{display:grid;gap:0;align-content:start}
+.day{display:grid;grid-template-columns:76px 1fr;gap:18px;padding:16px 0;border-top:1px dashed var(--line)}
+.day .dn{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ox-2);padding-top:5px}
+.day h5{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.15;margin-bottom:4px}
+.day p{font-size:14.5px;color:var(--ink-2)}
+.itin-side{display:grid;gap:24px;align-content:start}
+.itin-side .media{aspect-ratio:4/5;overflow:hidden}
+.itin-side .media img{width:100%;height:100%;object-fit:cover}
+.itin-side h6{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ox-2);margin-bottom:10px}
+.itin-side ul{list-style:none;display:grid;gap:6px;font-size:14.5px;color:var(--ink-2)}
+.itin-side ul li{display:flex;gap:10px}.itin-side ul li::before{content:"—";color:var(--gold-3)}
+.itin-side .note{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:12px}
+@media(max-width:960px){.itin-head{grid-template-columns:70px 1fr auto}.itin-inner{grid-template-columns:1fr;padding-left:0}.itin-side .media{aspect-ratio:16/10}}
+@media(max-width:560px){.itin-head{grid-template-columns:1fr auto;gap:12px}.itin-head .d{grid-column:1/-1;font-size:30px}}
+
+/* about page */
+.story{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,6vw,110px);align-items:start}
+.story-media{position:sticky;top:110px;display:grid;gap:18px}
+.story-media .main{aspect-ratio:4/5;overflow:hidden}
+.story-media .main img{width:100%;height:100%;object-fit:cover}
+.story-text{display:grid;gap:26px}
+.story-text p{font-size:clamp(17px,1.3vw,20px);line-height:1.7;color:var(--ink-2);max-width:60ch}
+.story-text .pull{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(26px,2.6vw,40px);line-height:1.25;color:var(--ox);padding-left:26px;border-left:2px solid var(--gold);max-width:24ch}
+@media(max-width:960px){.story{grid-template-columns:1fr}.story-media{position:relative;top:0}}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);margin-top:clamp(40px,5vw,72px)}
+.value{background:var(--night);padding:clamp(28px,3vw,44px);display:grid;gap:14px;align-content:start;transition:background .5s}
+.value:hover{background:var(--night-2)}
+.value .ic{width:36px;height:36px;color:var(--gold)}
+.value h4{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.1}
+.value p{font-size:15px;color:rgba(245,239,227,.78)}
+@media(max-width:960px){.values{grid-template-columns:1fr}}
+.services{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,5vw,80px);align-items:start;margin-top:clamp(40px,5vw,72px)}
+.service-list{display:grid}
+.service{padding:24px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:6px}
+.service:last-child{border-bottom:1px solid var(--line)}
+.service h4{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.1}
+.service p{font-size:15px;color:var(--ink-2)}
+.fleet{display:grid;grid-template-columns:2fr 3fr;gap:18px;align-items:end}
+.fleet figure{overflow:hidden}
+.fleet figure:nth-child(1){aspect-ratio:2/3}.fleet figure:nth-child(2){aspect-ratio:16/10;margin-bottom:18%}
+.fleet img{width:100%;height:100%;object-fit:cover}
+.fleet figcaption{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-top:10px}
+@media(max-width:960px){.services{grid-template-columns:1fr}}
+
+/* plan page */
+.plan-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(40px,6vw,110px);align-items:start}
+@media(max-width:960px){.plan-grid{grid-template-columns:1fr}}
+.form{display:grid;gap:26px}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:600px){.form .row{grid-template-columns:1fr}}
+.field{display:grid;gap:8px}
+.field label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.field input,.field select,.field textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(26,22,20,.3);padding:12px 0;font:inherit;font-size:17px;color:var(--ink);border-radius:0;transition:border-color .4s;appearance:none;-webkit-appearance:none}
+.field textarea{resize:vertical;min-height:120px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-bottom-color:var(--ox)}
+.field select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%235C1A12' stroke-width='1.5'/></svg>");background-repeat:no-repeat;background-position:right 4px center;padding-right:24px;cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;padding:10px 16px;border:1px solid rgba(26,22,20,.3);font-size:13px;letter-spacing:.08em;transition:all .35s var(--ease);cursor:pointer}
+.chip input:checked+span{background:var(--ox);border-color:var(--ox);color:var(--sand-2)}
+.chip input:focus-visible+span{outline:2px solid var(--gold);outline-offset:3px}
+.form-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.form-note{font-size:13px;color:var(--ink-3);max-width:52ch}
+.form-done{display:none;padding:34px;background:var(--night);color:var(--sand);gap:14px}
+.form-done.is-on{display:grid}
+.contact-card{background:var(--night);color:var(--sand);padding:clamp(28px,3.4vw,48px);display:grid;gap:26px;position:sticky;top:110px}
+.contact-card .big{font-family:var(--display);font-weight:300;font-size:clamp(28px,2.8vw,40px);line-height:1.05}
+.contact-card dl{display:grid;gap:18px}
+.contact-card dt{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;font-weight:600}
+.contact-card dd{font-size:16px;color:rgba(245,239,227,.88)}
+.contact-card dd a:hover{color:var(--gold-2)}
+.contact-card .wa{display:inline-flex;align-items:center;gap:10px}
+.contact-card .wa svg{width:18px;height:18px}
+.faq{margin-top:clamp(60px,8vw,110px);display:grid;grid-template-columns:minmax(0,.6fr) minmax(0,1.4fr);gap:clamp(30px,5vw,80px)}
+@media(max-width:960px){.faq{grid-template-columns:1fr}}
+.qa{border-top:1px solid var(--line)}
+.qa:last-child{border-bottom:1px solid var(--line)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;text-align:left;font-family:var(--display);font-weight:400;font-size:clamp(19px,1.6vw,24px);line-height:1.2}
+.qa button i{font-style:normal;color:var(--ox);transition:transform .5s var(--ease);font-family:var(--body);font-size:22px;font-weight:300}
+.qa.is-open button i{transform:rotate(45deg)}
+.qa .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.qa.is-open .a{grid-template-rows:1fr}
+.qa .a>div{overflow:hidden}
+.qa .a p{padding-bottom:22px;font-size:15.5px;color:var(--ink-2)}
+
+/* reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  [data-reveal],.stagger>*,.words .w>span,.reveal-img,.reveal-img img{opacity:1!important;transform:none!important;clip-path:none!important}
+  .scrub-words .sw{opacity:1!important}
+  body::before{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" aria-hidden="true"><span class="lab">View</span></div>
+<div class="curtain" aria-hidden="true"><img class="mark" src="images/logo-mark.png" alt=""></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#/" data-route>
+      <img src="images/logo-mark.png" alt="Sarabi Savanna">
+      <span><span class="word">Sarabi Savanna</span><span class="tag">Where Wilderness Meets Wonder</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#/destinations" data-route data-nav="destinations">Destinations</a>
+      <a href="#/safaris" data-route data-nav="safaris">Safaris</a>
+      <a href="#/about" data-route data-nav="about">About</a>
+      <a href="#/plan" data-route data-nav="plan">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:+254708010499"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>+254 708 010 499</a>
+      <a class="btn btn-gold" href="#/plan" data-route>Plan your safari</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <img src="images/maasai-wide.webp" alt="">
+  <nav>
+    <a href="#/" data-route>Home</a>
+    <a href="#/destinations" data-route>Destinations<i>Kenya · Tanzania</i></a>
+    <a href="#/safaris" data-route>Safaris<i>Journeys</i></a>
+    <a href="#/about" data-route>About<i>Our story</i></a>
+    <a href="#/plan" data-route>Plan your safari<i>Enquire</i></a>
+  </nav>
+  <div class="menu-foot">
+    <a href="tel:+254708010499">+254 708 010 499</a>
+    <a href="mailto:info@sarabisavanna.com">info@sarabisavanna.com</a>
+    <span class="muted">Apricot Suites, Parklands, Nairobi</span>
+  </div>
+</div>
+
+<main id="app">
+
+<!-- ===================================================== HOME -->
+<section class="view is-active" data-view="home">
+
+  <div class="hero">
+    <div class="hero-media">
+      <img class="desk" src="images/hero.webp" alt="A lioness surveys the Maasai Mara at dawn" fetchpriority="high">
+      <img class="mob" src="images/hero-mobile.webp" alt="">
+    </div>
+    <div class="hero-scrim"></div>
+    <canvas class="hero-dust" id="dust" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow hero-fade" style="animation-delay:.9s">Tailor-made safaris · Kenya &amp; Tanzania</span>
+        <h1 class="display hero-title words" data-words data-delay="0.6">Where wilderness <em>meets</em> wonder</h1>
+        <p class="hero-lede hero-fade" style="animation-delay:1.5s">Private safaris crafted in Nairobi by people who grew up on these plains. No two journeys alike — only the Kenya we know and love, opened up to you.</p>
+        <div class="hero-cta hero-fade" style="animation-delay:1.8s">
+          <a class="btn btn-gold" href="#/plan" data-route>Plan your safari <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="#/safaris" data-route>Explore journeys</a>
+        </div>
+      </div>
+      <div class="hero-side hero-fade" style="animation-delay:2s">
+        <div class="hero-meta"><span>Based in <b>Nairobi, Kenya</b></span><span>Female-founded · <b>Locally rooted</b></span><span>Kenya · Tanzania · <b>The Coast</b></span></div>
+        <div class="scroll-cue"><span>Begin</span><i></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Maasai Mara</span><span>Amboseli</span><span>Laikipia &amp; Ol Pejeta</span><span>Samburu</span><span>Lake Nakuru</span><span>Tsavo</span><span>Diani &amp; the South Coast</span><span>Serengeti</span><span>Ngorongoro</span><span>Mount Kenya</span><span>Lake Turkana</span><span>Watamu</span>
+      <span>Maasai Mara</span><span>Amboseli</span><span>Laikipia &amp; Ol Pejeta</span><span>Samburu</span><span>Lake Nakuru</span><span>Tsavo</span><span>Diani &amp; the South Coast</span><span>Serengeti</span><span>Ngorongoro</span><span>Mount Kenya</span><span>Lake Turkana</span><span>Watamu</span>
+    </div>
+  </div>
+
+  <!-- manifesto -->
+  <section class="section paper manifesto">
+    <div class="wrap manifesto-top">
+      <div>
+        <span class="eyebrow" data-reveal>Sarabi Savanna</span>
+        <p class="manifesto-text scrub-words" data-scrub style="margin-top:22px">Kenya is the birthplace of safari — <em class="serif-i">safari</em> is Swahili for journey. We were born here, and we grew up on its roads: the Mara at dawn, the elephant country of Amboseli, the rhino sanctuaries of Ol Pejeta, the hidden corners few visitors ever reach. Sarabi Savanna exists to share that Kenya with the world, one personal, unhurried journey at a time.</p>
+        <div style="margin-top:36px" data-reveal><a class="link" href="#/about" data-route>Our story <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div>
+      </div>
+      <div class="manifesto-aside stagger" data-reveal="stagger">
+        <div class="fact"><span class="n">01</span><div><b>Tailor-made, never templated</b><p>Every itinerary is designed around you — pace, interests, style of stay — then refined together until it feels right.</p></div></div>
+        <div class="fact"><span class="n">02</span><div><b>Locally rooted expertise</b><p>A Nairobi-based, female-founded team with longstanding partnerships across the region and access to places you won’t find in a brochure.</p></div></div>
+        <div class="fact"><span class="n">03</span><div><b>Honest, transparent pricing</b><p>Fair, open pricing and a model that sends more of your investment to local communities and conservation.</p></div></div>
+      </div>
+    </div>
+    <div class="wrap manifesto-img">
+      <figure><div class="reveal-img" data-reveal="img"><img src="images/leopard-cub.webp" alt="A young leopard on a branch in the Maasai Mara" loading="lazy"></div><figcaption>Leopard · Maasai Mara</figcaption></figure>
+      <figure><div class="reveal-img" data-reveal="img"><img src="images/ele-green.webp" alt="Two elephants on the green plains" loading="lazy"></div><figcaption>Amboseli herds</figcaption></figure>
+      <figure><div class="reveal-img" data-reveal="img"><img src="images/lion.webp" alt="A male lion in the long grass at first light" loading="lazy"></div><figcaption>The Mara at first light</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- explore chooser: Kenya / Tanzania -->
+  <section class="explore" id="explore" data-explore data-active="kenya">
+    <div class="explore-bg" aria-hidden="true">
+      <div class="explore-slide is-active" data-country="kenya"><img src="images/maasai-wide.webp" alt=""></div>
+      <div class="explore-slide" data-country="tanzania"><img src="images/ngorongoro.webp" alt=""></div>
+    </div>
+    <div class="explore-scrim" aria-hidden="true"></div>
+    <div class="explore-maps" aria-hidden="true">
+      <svg class="explore-map is-active" data-country="kenya" viewBox="0 0 600 600" fill="none" preserveAspectRatio="xMidYMid meet">
+        <path class="arc" d="M-40,150 Q300,-30 248,368.9"/>
+        <path class="land" d="M114.0,107.1 L135.3,88.1 L175.7,70.0 L206.6,89.0 L211.4,96.1 L251.8,97.1 L308.8,135.6 L375.3,143.7 L437.1,105.6 L489.4,118.5 L444.2,291.0 L446.6,350.4 L472.7,388.4 L441.8,419.3 L408.6,445.4 L403.8,459.7 L392.0,480.1 L383.4,500.1 L379.1,511.9 L361.1,530.0 L318.3,495.3 L289.8,469.2 L285.0,450.2 L209.0,408.8 L110.6,355.1 L118.7,345.6 L135.3,332.8 L149.6,312.4 L140.1,305.2 L114.0,301.9 L118.7,286.2 L140.1,255.3 L135.3,241.1 L118.7,217.3 L130.6,184.0 L123.5,150.8 L114.0,136.5 Z"/>
+        <circle class="halo" cx="248" cy="368.9" r="10"/><circle class="pin" cx="248" cy="368.9" r="5"/>
+      </svg>
+      <svg class="explore-map" data-country="tanzania" viewBox="0 0 600 600" fill="none" preserveAspectRatio="xMidYMid meet">
+        <path class="arc" d="M-40,120 Q260,-30 295.8,135.4"/>
+        <path class="land" d="M108.0,76.3 L255.7,76.3 L259.9,101.7 L340.1,101.7 L411.8,160.7 L420.3,186.1 L479.4,240.9 L492.0,304.2 L479.4,333.8 L492.0,371.7 L530.0,468.8 L496.2,485.7 L449.8,511.0 L407.6,523.7 L285.2,523.7 L272.6,456.1 L255.7,435.0 L213.5,430.8 L171.3,413.9 L133.3,397.1 L108.0,338.0 L70.0,300.0 L74.2,224.0 L124.9,177.6 L108.0,131.2 L116.4,80.6 Z"/>
+        <circle class="halo" cx="295.8" cy="135.4" r="10"/><circle class="pin" cx="295.8" cy="135.4" r="5"/>
+      </svg>
+    </div>
+    <div class="explore-inner">
+      <span class="eyebrow no-rule">I want to explore</span>
+      <div class="explore-names">
+        <button class="explore-name" data-select="kenya" type="button" aria-pressed="true">Kenya</button>
+        <button class="explore-name" data-select="tanzania" type="button" aria-pressed="false">Tanzania</button>
+      </div>
+      <a class="btn btn-ghost explore-cta" data-explore-cta href="#/destinations" data-route>Discover more <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+      <button class="explore-switch" type="button" data-explore-switch>Switch to <span data-switch-label>Tanzania</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+    </div>
+    <div class="explore-caption" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.4"/></svg><span data-explore-caption>Maasai Mara, Kenya</span></div>
+    <div class="explore-dots" aria-hidden="true"><i data-dot="kenya" class="is-on"></i><i data-dot="tanzania"></i></div>
+  </section>
+
+  <!-- destinations journey -->
+  <section class="journey" id="journey">
+    <div class="wrap journey-head">
+      <div>
+        <span class="eyebrow" data-reveal>Destinations</span>
+        <h2 class="display h-l words" data-words style="margin-top:18px">From the Mara <em>to the</em> Indian Ocean</h2>
+      </div>
+      <p class="lede muted" data-reveal style="max-width:44ch">Stretching across the equator between the Rift Valley and the Indian Ocean, Kenya is a land of remarkable diversity. Scroll to travel it — then cross the border into Tanzania.</p>
+    </div>
+    <div class="journey-pin" id="journeyPin">
+      <div class="journey-track" id="journeyTrack">
+        <a class="dest wide" href="#/destinations/mara" data-route data-cursor="view">
+          <img src="images/lion-wide.webp" alt="">
+          <div class="dest-body"><div class="k"><span>01 — Kenya</span><span>Jun – Oct migration</span></div><h3>Maasai Mara</h3><p>Kenya’s most iconic landscape: sweeping savanna, umbrella acacias and an astonishing density of wildlife — never more so than when two million wildebeest wheel onto the Mara from the Serengeti.</p><span class="link">Discover <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="dest" href="#/destinations/amboseli" data-route data-cursor="view">
+          <img src="images/amboseli-p.webp" alt="A lone elephant below Mount Kilimanjaro in Amboseli">
+          <div class="dest-body"><div class="k"><span>02 — Kenya</span><span>Elephants</span></div><h3>Amboseli &amp; Chyulu</h3><p>Great elephant herds roam against the white backdrop of Kilimanjaro; beyond lie the green hills and forests of Chyulu.</p><span class="link">Discover <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="dest" href="#/destinations/laikipia" data-route data-cursor="view">
+          <img src="images/rhino-portrait.webp" alt="">
+          <div class="dest-body"><div class="k"><span>03 — Kenya</span><span>Conservation</span></div><h3>Laikipia &amp; Ol Pejeta</h3><p>Once cattle ranches, now a conservation haven at the foot of Mount Kenya, sheltering rhino, wild dog and reticulated giraffe.</p><span class="link">Discover <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="dest" href="#/destinations/samburu" data-route data-cursor="view">
+          <img src="images/eagle.webp" alt="">
+          <div class="dest-body"><div class="k"><span>04 — Kenya</span><span>The north</span></div><h3>Samburu &amp; the Northern Frontier</h3><p>Rugged, khaki-toned country and the home of the Samburu people — community-led conservation, and beyond it the deserts and volcanic lakes of the far north.</p><span class="link">Discover <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="dest" href="#/destinations/coast" data-route data-cursor="view">
+          <img src="images/balloons.webp" alt="">
+          <div class="dest-body"><div class="k"><span>05 — Kenya</span><span>Rift Valley &amp; Coast</span></div><h3>Rift Valley to the Coast</h3><p>Flamingo-pink lakes and volcanic wilds best seen from a helicopter, then white sand, dhows and coral reefs at Diani, Watamu and Malindi.</p><span class="link">Discover <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="dest wide" href="#/destinations/tanzania" data-route data-cursor="view">
+          <img src="images/ngorongoro.webp" alt="">
+          <div class="dest-body"><div class="k"><span>06 — Tanzania</span><span>On request</span></div><h3>Serengeti &amp; Ngorongoro</h3><p>Cross the border with us: the endless plains of the Serengeti, where the migration begins its great loop, and the misty rim of the Ngorongoro Crater.</p><span class="link">Discover <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <div class="dest-end">
+          <span class="eyebrow">Where next?</span>
+          <h3 class="display h-s">Every destination, <em>tailored</em> to how you travel.</h3>
+          <a class="btn btn-ghost" href="#/destinations" data-route>All destinations</a>
+        </div>
+      </div>
+    </div>
+    <div class="journey-progress"><i id="journeyBar"></i></div>
+  </section>
+
+  <!-- experiences -->
+  <section class="section night-2">
+    <div class="wrap">
+      <div class="grid g-2" style="align-items:end">
+        <div><span class="eyebrow" data-reveal>Safari experiences</span><h2 class="display h-l words" data-words style="margin-top:18px">Ways to <em>meet</em> the wild</h2></div>
+        <p class="lede muted" data-reveal>Romantic, family-friendly, photography-focused or purely adventurous — tell us how you like to travel and we’ll shape the safari around it.</p>
+      </div>
+      <div class="exp-grid">
+        <a class="exp a" href="#/safaris" data-route data-cursor="view"><img src="images/leopard-snarl-wide.webp" alt="" loading="lazy"><span class="num">I</span><h3>Classic safari</h3><p>Expertly guided game drives across the vast savannas, from the Mara to Tsavo — the Kenya that made safari famous.</p><span class="link">Explore <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+        <a class="exp b" href="#/safaris" data-route data-cursor="view"><img src="images/maasai.webp" alt="" loading="lazy"><span class="num">II</span><h3>Culture &amp; community</h3><p>Maasai and Samburu villages, local artisans and community-led conservation — journeys that give back.</p><span class="link">Explore <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+        <a class="exp c" href="#/safaris" data-route data-cursor="view"><img src="images/leopard-rest.webp" alt="" loading="lazy"><span class="num">III</span><h3>Honeymoon &amp; romance</h3><p>Private bush dinners under the stars, sundowners over the plains and the romance of a real adventure.</p><span class="link">Explore <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+        <a class="exp d" href="#/safaris" data-route data-cursor="view"><img src="images/cheetah-vehicle.webp" alt="" loading="lazy"><span class="num">IV</span><h3>Private &amp; family</h3><p>Your own 4x4 and guide, complete flexibility, and quiet conservancies where the wildlife comes to you.</p><span class="link">Explore <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+        <a class="exp e" href="#/safaris" data-route data-cursor="view"><img src="images/balloons.webp" alt="" loading="lazy"><span class="num">V</span><h3>Balloons, helicopters &amp; beach</h3><p>Soar above the Mara at sunrise, fly the escarpments of the Rift Valley, then trade dust for the Indian Ocean.</p><span class="link">Explore <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- signature journeys -->
+  <section class="section paper">
+    <div class="wrap">
+      <div class="grid g-2" style="align-items:end">
+        <div><span class="eyebrow" data-reveal>Signature journeys</span><h2 class="display h-l words" data-words style="margin-top:18px">Example trips <em>to</em> get inspired</h2></div>
+        <p class="lede muted" data-reveal>Start with one of our ready-made itineraries, or let us adapt every detail — dates, activities, camps — to suit you.</p>
+      </div>
+      <div class="trips">
+        <a class="trip feature" href="#/safaris/great-migration" data-route data-cursor="view">
+          <div class="media"><img src="images/balloons-wide.webp" alt="" loading="lazy"><span class="days">6 days</span></div>
+          <div class="body"><span class="k">Maasai Mara · Lake Nakuru</span><h3 class="display">The Great Migration Safari</h3><p>Flamingo-lined Lake Nakuru, then the Mara at the height of the migration: river crossings, big cats, a Maasai village visit and a private bush dinner around the fire.</p><div class="foot"><span>Big Five · River crossings · Balloon option</span><span class="link">Itinerary</span></div></div>
+        </a>
+        <a class="trip" href="#/safaris/laikipia" data-route data-cursor="view">
+          <div class="media"><img src="images/rhino.webp" alt="" loading="lazy"><span class="days">5 days</span></div>
+          <div class="body"><span class="k">Laikipia · Ol Pejeta</span><h3>Laikipia &amp; Ol Pejeta Wilderness</h3><p>Rhino, wild dog and Grevy’s zebra in Kenya’s pristine private conservancies, with Mount Kenya on the horizon.</p><div class="foot"><span>Conservation · Bush walks</span><span class="link">Itinerary</span></div></div>
+        </a>
+        <a class="trip" href="#/safaris/northern-frontier" data-route data-cursor="view">
+          <div class="media"><img src="images/ele-frame.webp" alt="" loading="lazy"><span class="days">7 days</span></div>
+          <div class="body"><span class="k">Wajir · Marsabit · Turkana</span><h3>The Northern Frontier Adventure</h3><p>Kenya’s least-visited, most captivating regions — from Marsabit’s forested highlands to the Jade Sea of Lake Turkana.</p><div class="foot"><span>Expedition · Culture</span><span class="link">Itinerary</span></div></div>
+        </a>
+        <a class="trip" href="#/safaris/ultimate-kenya" data-route data-cursor="view">
+          <div class="media"><img src="images/elephants-sunset.webp" alt="" loading="lazy"><span class="days">10 days</span></div>
+          <div class="body"><span class="k">Samburu · Amboseli · Tsavo · Diani</span><h3>The Ultimate Kenya North &amp; South</h3><p>An epic arc from the rugged north to Amboseli’s elephants, Tsavo’s red earth and the white sands of Diani.</p><div class="foot"><span>Bush &amp; beach</span><span class="link">Itinerary</span></div></div>
+        </a>
+      </div>
+      <div style="margin-top:44px;display:flex;justify-content:center" data-reveal><a class="btn btn-ox" href="#/safaris" data-route>View all journeys</a></div>
+    </div>
+  </section>
+
+  <!-- why -->
+  <section class="section why">
+    <div class="why-bg" data-parallax="0.18"><img src="images/ele-green-wide.webp" alt="" loading="lazy"></div>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow" data-reveal>Why Sarabi Savanna</span>
+        <h2 class="display h-l words" data-words style="margin-top:18px">Travel that <em>enriches</em> both traveller and destination</h2>
+        <p class="lede muted" data-reveal style="margin-top:26px">We work with partners who bring a deep connection to the land, curating experiences that are authentic, unique and unforgettable — while making sure tourism revenue reaches the communities and conservation projects that need it most.</p>
+        <ul class="usp stagger" data-reveal="stagger" style="margin-top:34px">
+          <li>Customised 4x4 safari vehicles with panoramic windows</li>
+          <li>Night-drive lighting for after-dark game viewing</li>
+          <li>Experienced guides who bring the bush to life</li>
+          <li>Maasai blankets for chilly morning drives</li>
+          <li>Complimentary snacks and drinks on every drive</li>
+          <li>Exclusive access to quieter, less-visited reserves</li>
+        </ul>
+      </div>
+      <div class="pillars stagger" data-reveal="stagger">
+        <div class="pillar"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M24 4l4 12h12l-10 7 4 12-10-7-10 7 4-12-10-7h12z"/></svg><div><h4>Authentic journeys</h4><p>Locally rooted and driven by a passion for showing the best of Kenya — from its landscapes to its vibrant cultures.</p></div></div>
+        <div class="pillar"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="24" cy="24" r="18"/><path d="M6 24h36M24 6c6 6 6 30 0 36M24 6c-6 6-6 30 0 36"/></svg><div><h4>Unmatched expertise</h4><p>Each journey is designed collaboratively, blending our knowledge with your vision and guided by those who know Kenya best.</p></div></div>
+        <div class="pillar"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M24 42s-16-9-16-21a8 8 0 0 1 16-3 8 8 0 0 1 16 3c0 12-16 21-16 21z"/></svg><div><h4>Dedication to local impact</h4><p>Carefully selected partners who share our commitment to communities and to preserving Kenya’s natural heritage.</p></div></div>
+        <div class="pillar"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M17 24l5 5 9-10"/></svg><div><h4>Integrity &amp; trust</h4><p>Fair, open practices, honest pricing and a straightforward approach — so you understand the value and impact of every journey.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- process -->
+  <section class="section paper-2">
+    <div class="wrap">
+      <div class="grid g-2" style="align-items:end">
+        <div><span class="eyebrow" data-reveal>How we work</span><h2 class="display h-l words" data-words style="margin-top:18px">From first call <em>to</em> welcome home</h2></div>
+        <p class="lede muted" data-reveal>Begin by sharing your dreams, interests and the details you’d like in your ideal trip. Every detail helps us design an experience that reflects the heart of our country.</p>
+      </div>
+      <div class="steps" id="steps">
+        <div class="line line-draw" data-reveal="line"></div>
+        <div class="step" data-reveal><span class="dot"></span><span class="n">Step one</span><h4>Getting started</h4><p>Reach out through this site or give us a call and tell us what you’re dreaming of.</p></div>
+        <div class="step" data-reveal><span class="dot"></span><span class="n">Step two</span><h4>A personal itinerary</h4><p>Choose a ready-made trip or let us craft one — then we fine-tune every detail together.</p></div>
+        <div class="step" data-reveal><span class="dot"></span><span class="n">Step three</span><h4>Booking &amp; payment</h4><p>Transparent pricing that covers accommodation, flights and fees — and sends more to local communities.</p></div>
+        <div class="step" data-reveal><span class="dot"></span><span class="n">Step four</span><h4>Pre-trip preparation</h4><p>Last-minute arrangements, restaurant reservations and a call to review everything before you set off.</p></div>
+        <div class="step" data-reveal><span class="dot"></span><span class="n">Step five</span><h4>On the ground in Kenya</h4><p>Welcomed on arrival by our team, with 24/7 support for the length of your journey.</p></div>
+        <div class="step" data-reveal><span class="dot"></span><span class="n">Step six</span><h4>After your journey</h4><p>We’d love to hear how it went — and when you’re ready, we’ll be here for the next adventure.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- reviews -->
+  <section class="section reviews">
+    <div class="wrap" style="margin-bottom:44px">
+      <span class="eyebrow" data-reveal>Guest stories</span>
+      <h2 class="display h-l words" data-words style="margin-top:18px">In their <em>own</em> words</h2>
+    </div>
+    <div class="review-track" id="reviewTrack">
+      <div class="review"><span class="stars">★★★★★</span><q>We recently returned from an unforgettable trip to Kenya, all thanks to the exceptional experience…</q><div class="who"><span><b>Sabuhi Mahmood</b>Google review</span><span>Mar 2025</span></div></div>
+      <div class="review"><span class="stars">★★★★★</span><q>I recently had the most incredible wildlife safari with Sarabi Savanna while I was in Kenya…</q><div class="who"><span><b>Jil Pandya</b>Google review</span><span>Mar 2025</span></div></div>
+      <div class="review"><span class="stars">★★★★★</span><q>I recently had the pleasure of traveling to the magnificent Masai Mara, and I owe the incredible experience…</q><div class="who"><span><b>Abhijeet Adatia</b>Google review</span><span>Mar 2025</span></div></div>
+      <div class="review"><span class="stars">★★★★★</span><q>When I planned my trip to Kenya, I did not intend to do any safaris because I did not see the appeal…</q><div class="who"><span><b>Vikas Solanki</b>Google review</span><span>Mar 2025</span></div></div>
+      <div class="review"><span class="stars">★★★★★</span><q>Got to see a leopard at Tsavo thanks to Sarabi Savanna.</q><div class="who"><span><b>Neel Vadgama</b>Google review</span><span>Mar 2025</span></div></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <img src="images/ele-frame-wide.webp" alt="" loading="lazy" data-parallax="0.15">
+    <div class="wrap">
+      <span class="eyebrow no-rule" data-reveal>Plan your safari</span>
+      <h2 class="display h-l words" data-words>Your safari starts with <em>one</em> conversation</h2>
+      <p class="lede" data-reveal style="max-width:48ch;color:rgba(245,239,227,.85)">Tell us where you want to go, the pace you enjoy and what matters most. We’ll design a tailored itinerary around it — and aim to reply within 24 hours.</p>
+      <div class="hero-cta" data-reveal style="margin-top:8px;justify-content:center"><a class="btn btn-gold" href="#/plan" data-route>Enquire now</a><a class="btn btn-ghost" href="tel:+254708010499">Call +254 708 010 499</a></div>
+    </div>
+  </section>
+
+</section>
+
+<!-- ===================================================== DESTINATIONS -->
+<section class="view" data-view="destinations">
+  <div class="page-hero">
+    <img src="images/leopard-snarl-wide.webp" alt="">
+    <div class="wrap">
+      <span class="crumbs"><a href="#/" data-route>Home</a> &nbsp;/&nbsp; Destinations</span>
+      <h1 class="display h-xl words" data-words>The home <em>of</em> safari</h1>
+      <p class="lede" style="color:rgba(245,239,227,.85)">Kenya, from the Rift Valley to the Indian Ocean — and across the border into northern Tanzania. Choose a region, or let us combine several into one seamless journey.</p>
+    </div>
+  </div>
+
+  <section class="region">
+    <div class="wrap">
+      <div class="region-head">
+        <div><span class="eyebrow" data-reveal>Kenya</span><h2 class="display h-l words" data-words style="margin-top:18px">A land of astounding <em>diversity</em></h2></div>
+        <p class="lede muted" data-reveal>Straddling the equator between the Rift Valley and the Indian Ocean, Kenya is a land of remarkable geographical, cultural and ecological diversity. Known as the birthplace of safari, it rewards travellers like nowhere else.</p>
+      </div>
+      <div class="map-wrap">
+        <div class="map-sticky" data-reveal="fade"><svg class="kmap" id="kmap" viewBox="0 0 410 490" role="img" aria-label="Map of Kenya and northern Tanzania with Sarabi Savanna destinations"></svg></div>
+        <div class="places" id="places">
+          <article class="place" id="d-mara" data-pin="mara">
+            <div class="reveal-img media" data-reveal="img"><img src="images/hero.webp" alt="Lioness on the Maasai Mara" loading="lazy"></div>
+            <h3 class="display">Maasai Mara</h3>
+            <div class="meta"><span>South-west Kenya</span><span>Migration Jul – Oct</span><span>Big Five</span></div>
+            <p>Kenya’s most iconic landscape: savanna plains punctuated by acacia trees and teeming with wildlife. During the Great Migration, over two million wildebeest surge into the Mara from Tanzania, creating a spectacle like no other. Camps in the community-owned conservancies bordering the reserve offer greater freedom and exclusivity, while directly supporting Maasai livelihoods.</p>
+            <ul><li>Mara River crossings</li><li>Hot air balloon at sunrise</li><li>Maasai village visits</li><li>Private conservancies</li></ul>
+          </article>
+          <article class="place" id="d-amboseli" data-pin="amboseli">
+            <div class="reveal-img media" data-reveal="img"><img src="images/amboseli.webp" alt="An elephant on the plains below Mount Kilimanjaro, Amboseli" loading="lazy"></div>
+            <h3 class="display">Amboseli &amp; Chyulu</h3>
+            <div class="meta"><span>Southern Kenya</span><span>Elephant herds</span><span>Kilimanjaro views</span></div>
+            <p>Journey south-east to Amboseli, where great herds of elephants roam against the stunning white backdrop of Mount Kilimanjaro. From there, explore the lush hills and forests of Chyulu — green, volcanic and quiet.</p>
+            <ul><li>Kilimanjaro sundowners</li><li>Elephant photography</li><li>Chyulu Hills</li></ul>
+          </article>
+          <article class="place" id="d-laikipia" data-pin="laikipia">
+            <div class="reveal-img media" data-reveal="img"><img src="images/rhino.webp" alt="Black rhino in Laikipia" loading="lazy"></div>
+            <h3 class="display">Laikipia, Ol Pejeta &amp; Mount Kenya</h3>
+            <div class="meta"><span>Central Kenya</span><span>Rhino sanctuary</span><span>Year-round</span></div>
+            <p>North of Nairobi, at the base of Mount Kenya, the plains of Laikipia were once dominated by cattle ranches and have transformed into a conservation haven sheltering rhino, African wild dog and giraffe. Exclusive lodges here go beyond the game drive: bush walks, camel treks, horseback safaris and night drives, with Ol Pejeta’s rhino sanctuary and chimpanzee sanctuary close at hand.</p>
+            <ul><li>Ol Pejeta Conservancy</li><li>Bush walks &amp; night drives</li><li>Mount Kenya treks</li><li>Meru National Park</li></ul>
+          </article>
+          <article class="place" id="d-samburu" data-pin="samburu">
+            <div class="reveal-img media" data-reveal="img"><img src="images/samburu.webp" alt="Elephants beneath an acacia on the red earth of Samburu" loading="lazy"></div>
+            <h3 class="display">Samburu &amp; the Northern Frontier</h3>
+            <div class="meta"><span>Northern Kenya</span><span>Culture</span><span>Expedition</span></div>
+            <p>Further north, the land shifts to rugged, khaki-toned terrain — home to the Samburu people, their rich culture and inspiring community-led conservation. Beyond lie Kenya’s least-visited regions: Marsabit’s forested highlands, the Chalbi Desert and Lake Turkana, the Jade Sea.</p>
+            <ul><li>Samburu National Reserve</li><li>Marsabit &amp; Lake Paradise</li><li>Chalbi Desert</li><li>Lake Turkana</li></ul>
+          </article>
+          <article class="place" id="d-rift" data-pin="nakuru">
+            <div class="reveal-img media" data-reveal="img"><img src="images/nakuru.webp" alt="Flamingos massed on the shore of Lake Nakuru" loading="lazy"></div>
+            <h3 class="display">The Rift Valley &amp; Tsavo</h3>
+            <div class="meta"><span>Central &amp; south-east</span><span>Lakes</span><span>Red-earth elephants</span></div>
+            <p>The Rift Valley unfolds with its salty lakes, deserts and volcanic landscapes — Lake Nakuru’s flamingos among them — best explored by helicopter for a breathtaking, bird’s-eye view of Kenya’s untamed beauty. To the south-east, Tsavo’s vast wilderness holds Mzima Springs, the Shetani lava flows and its famous red-dust elephants.</p>
+            <ul><li>Lake Nakuru</li><li>Helicopter safaris</li><li>Tsavo East &amp; West</li></ul>
+          </article>
+          <article class="place" id="d-coast" data-pin="diani">
+            <div class="reveal-img media" data-reveal="img"><img src="images/diani.webp" alt="White sand and turquoise water at Diani Beach" loading="lazy"></div>
+            <h3 class="display">The Coast</h3>
+            <div class="meta"><span>Indian Ocean</span><span>Diani · Watamu · Malindi</span><span>Bush &amp; beach</span></div>
+            <p>Trade dust for white sand. Diani’s beaches and the marine park at Kisite Mpunguti, dhow sails off Wasini Island, Watamu’s reefs and Mida Creek, and the Swahili heritage of Malindi and the Gede ruins. The perfect final chapter after the bush.</p>
+            <ul><li>Diani Beach</li><li>Wasini &amp; Kisite Mpunguti</li><li>Watamu Marine Park</li><li>Shimba Hills</li></ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="region paper">
+    <div class="wrap">
+      <div class="region-head">
+        <div><span class="eyebrow" data-reveal>Tanzania</span><h2 class="display h-l words" data-words style="margin-top:18px">Where the migration <em>begins</em></h2></div>
+        <p class="lede muted" data-reveal>The Serengeti’s endless plains and the Ngorongoro Crater lie just across the border. We craft Tanzania journeys and Kenya–Tanzania combinations on request — talk to us about the right season for your route.</p>
+      </div>
+      <div class="grid g-2" style="align-items:stretch">
+        <article class="place" data-pin="serengeti" style="color:var(--ink)">
+          <div class="reveal-img media" data-reveal="img"><img src="images/serengeti.webp" alt="A lone acacia on the Serengeti plains" loading="lazy"></div>
+          <h3 class="display">Serengeti</h3>
+          <div class="meta" style="color:var(--ox-2)"><span>Northern Tanzania</span><span>Great Migration</span></div>
+          <p style="color:var(--ink-2)">Endless grassland under a vast sky, where the wildebeest begin their year-long loop before crossing into the Mara. Combine it with Kenya for the migration from both sides.</p>
+        </article>
+        <article class="place" data-pin="ngorongoro" style="color:var(--ink)">
+          <div class="reveal-img media" data-reveal="img"><img src="images/ngorongoro.webp" alt="The floor and rim of the Ngorongoro Crater" loading="lazy"></div>
+          <h3 class="display">Ngorongoro</h3>
+          <div class="meta" style="color:var(--ox-2)"><span>Crater highlands</span><span>Year-round</span></div>
+          <p style="color:var(--ink-2)">A collapsed volcano whose forested rim rises above a crater floor thick with wildlife. Misty mornings, extraordinary density, and a natural pairing with the Serengeti and Kilimanjaro.</p>
+        </article>
+      </div>
+
+      <div class="seasons" data-reveal="fade">
+        <div class="season"><span class="m">Jan – Feb</span><h4>Green season</h4><span class="t">28°<small>avg · ~100 mm</small></span><p>Warm and largely dry; lush landscapes and excellent light. A good time for the coast, too.</p></div>
+        <div class="season"><span class="m">Mar – May</span><h4>Long rains</h4><span class="t">26°<small>avg · ~170 mm</small></span><p>Dramatic skies, fewer visitors and quieter camps — a photographer’s season.</p></div>
+        <div class="season"><span class="m">Jun – Sep</span><h4>Dry season</h4><span class="t">25°<small>avg · ~82 mm</small></span><p>The most popular time for safari: cooler, drier and coinciding with the migration’s arrival on the Mara.</p></div>
+        <div class="season"><span class="m">Oct – Dec</span><h4>Short rains</h4><span class="t">27°<small>avg · ~125 mm</small></span><p>Brief afternoon showers, green plains and newborn wildlife as the year turns.</p></div>
+      </div>
+      <p class="muted" data-reveal style="margin-top:16px;font-size:13px">Kenya seasonal averages. The most popular months are late June to October, but every season has its own rewards — we’ll advise on the best timing for your route.</p>
+    </div>
+  </section>
+
+  <section class="cta-band" style="min-height:60svh">
+    <img src="images/maasai-wide.webp" alt="" loading="lazy" data-parallax="0.15">
+    <div class="wrap">
+      <h2 class="display h-l words" data-words>Which Kenya <em>calls</em> to you?</h2>
+      <div class="hero-cta" data-reveal style="justify-content:center"><a class="btn btn-gold" href="#/plan" data-route>Plan your safari</a><a class="btn btn-ghost" href="#/safaris" data-route>See example journeys</a></div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================================================== SAFARIS -->
+<section class="view" data-view="safaris">
+  <div class="page-hero">
+    <img src="images/balloons-wide.webp" alt="" style="object-position:center 20%">
+    <div class="wrap">
+      <span class="crumbs"><a href="#/" data-route>Home</a> &nbsp;/&nbsp; Safaris</span>
+      <h1 class="display h-xl words" data-words>Journeys <em>shaped</em> around you</h1>
+      <p class="lede" style="color:rgba(245,239,227,.85)">Choose from our curated example trips or customise an itinerary to suit you — adjusting dates, adding activities and selecting accommodation that fits your style.</p>
+    </div>
+  </div>
+
+  <section class="section night-2">
+    <div class="wrap">
+      <div class="grid g-2" style="align-items:end">
+        <div><span class="eyebrow" data-reveal>Travel styles</span><h2 class="display h-l words" data-words style="margin-top:18px">Find your <em>kind</em> of wild</h2></div>
+        <p class="lede muted" data-reveal>Whether you’re seeking an adventurous safari, a cultural immersion or a romantic getaway, our team will help you find the ideal journey.</p>
+      </div>
+      <div class="styles">
+        <a class="style" href="#/safaris/great-migration" data-route data-cursor="view" data-reveal><img src="images/lion.webp" alt="" loading="lazy"><h3>Classic safari</h3><p>Luxury lodges, expert guiding and the great wildlife spectacles of the Mara, Amboseli and Tsavo.</p></a>
+        <a class="style" href="#/safaris/laikipia" data-route data-cursor="view" data-reveal><img src="images/rhino-portrait.webp" alt="" loading="lazy"><h3>Private safari</h3><p>Your own vehicle and guide, complete flexibility, and exclusive-use camps in quiet conservancies.</p></a>
+        <a class="style" href="#/safaris/ultimate-kenya" data-route data-cursor="view" data-reveal><img src="images/lioness-portrait.webp" alt="" loading="lazy"><h3>Honeymoon</h3><p>From guilt-free indulgence to the romance of a real adventure — bush, beach or both.</p></a>
+        <a class="style" href="#/safaris/great-migration" data-route data-cursor="view" data-reveal><img src="images/cheetah-vehicle.webp" alt="" loading="lazy"><h3>Family</h3><p>Quality time in the great outdoors, from babysitters on hand to a private expedition for three generations.</p></a>
+        <a class="style" href="#/safaris/mt-kenya" data-route data-cursor="view" data-reveal><img src="images/eagle-p.webp" alt="" loading="lazy"><h3>Photography &amp; adventure</h3><p>Trek Mount Kenya, expedition through the Northern Frontier, or slow down for the light.</p></a>
+        <a class="style" href="#/safaris/south-coast" data-route data-cursor="view" data-reveal><img src="images/balloons.webp" alt="" loading="lazy"><h3>Bush &amp; beach</h3><p>Finish the safari on the Indian Ocean — Diani, Watamu or Malindi.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section paper" id="itineraries">
+    <div class="wrap">
+      <div class="grid g-2" style="align-items:end;margin-bottom:clamp(30px,4vw,60px)">
+        <div><span class="eyebrow" data-reveal>Example itineraries</span><h2 class="display h-l words" data-words style="margin-top:18px">Seven journeys <em>to</em> begin with</h2></div>
+        <p class="lede muted" data-reveal>Every trip below can be adapted. Pricing depends on season, accommodation and group size — contact us for a personalised quote.</p>
+      </div>
+      <div id="itinList">
+
+      <article class="itin" id="great-migration">
+        <button class="itin-head" aria-expanded="false"><span class="d">6<small>days</small></span><div><h3>The Great Migration Safari</h3><div class="route">Nairobi · Lake Nakuru · Maasai Mara</div></div><span class="plus"></span></button>
+        <div class="itin-body"><div><div class="itin-inner">
+          <div class="days">
+            <div class="day"><span class="dn">Day 1</span><div><h5>Nairobi to Lake Nakuru</h5><p>Arrive at Jomo Kenyatta International Airport and take the scenic drive to Lake Nakuru. Check in to your lodge or tented camp, then head out for a short game drive before a gourmet dinner under the stars.</p></div></div>
+            <div class="day"><span class="dn">Day 2</span><div><h5>Into the Maasai Mara</h5><p>A morning transfer to the Mara, a welcome drink on arrival, and an evening game drive as the plains turn gold.</p></div></div>
+            <div class="day"><span class="dn">Days 3–4</span><div><h5>Full-day migration experience</h5><p>Early breakfasts and full days in the reserve: Mara River crossings, predator action and a bush picnic. Visit a Maasai village, take an optional sunrise balloon flight with champagne breakfast, and end with a private bush dinner around the campfire.</p></div></div>
+            <div class="day"><span class="dn">Day 5</span><div><h5>Your Mara, your way</h5><p>A private game drive tailored to your interests or a return to migration hotspots, followed by a farewell dinner with Maasai storytelling around the fire.</p></div></div>
+            <div class="day"><span class="dn">Day 6</span><div><h5>Sunrise safari &amp; departure</h5><p>One last dawn drive before your transfer back to Nairobi.</p></div></div>
+          </div>
+          <aside class="itin-side">
+            <div class="media"><img src="images/lion-p.webp" alt="" loading="lazy"></div>
+            <div><h6>Highlights</h6><ul><li>Epic river crossings</li><li>Big Five encounters</li><li>Predator action</li><li>Optional hot air balloon safari</li></ul></div>
+            <div><h6>Included</h6><ul><li>Luxury lodges, full board</li><li>Private 4x4 with guide-driver</li><li>Guided game drives &amp; park fees</li><li>24/7 support</li></ul></div>
+            <a class="btn btn-ox" href="#/plan?trip=The%20Great%20Migration%20Safari" data-route>Enquire about this trip</a>
+            <p class="note">Book well in advance to avoid disappointment. Price subject to availability at time of booking; alternative accommodation may vary in price.</p>
+          </aside>
+        </div></div></div>
+      </article>
+
+      <article class="itin" id="laikipia">
+        <button class="itin-head" aria-expanded="false"><span class="d">5<small>days</small></span><div><h3>Laikipia &amp; Ol Pejeta Wilderness</h3><div class="route">Nanyuki · Ol Pejeta · Laikipia conservancies · Mount Kenya foothills</div></div><span class="plus"></span></button>
+        <div class="itin-body"><div><div class="itin-inner">
+          <div class="days">
+            <div class="day"><span class="dn">Day 1</span><div><h5>Nairobi to Nanyuki</h5><p>Drive north to Laikipia and settle into a luxury lodge or boutique camp. A first game drive in Ol Pejeta — Big Five country and a rhino sanctuary — then sundowners and dinner under the stars.</p></div></div>
+            <div class="day"><span class="dn">Day 2</span><div><h5>On foot and among neighbours</h5><p>A guided nature walk, then a visit to a Samburu or Kikuyu community with traditional dances. Bush picnic, an afternoon at the pool or spa, and stargazing by the campfire.</p></div></div>
+            <div class="day"><span class="dn">Days 3–4</span><div><h5>Wild dog, Grevy’s zebra and chimpanzees</h5><p>Track wild dogs and Grevy’s zebra, breakfast with Mount Kenya views, and visit the Sweetwaters Chimpanzee Sanctuary. Optional horseback or camel safari, and a night game drive in search of aardvark and leopard.</p></div></div>
+            <div class="day"><span class="dn">Day 5</span><div><h5>Mount Kenya foothills &amp; return</h5><p>An optional trek or drive through the foothills of Mount Kenya before returning to Nairobi.</p></div></div>
+          </div>
+          <aside class="itin-side">
+            <div class="media"><img src="images/rhino-portrait.webp" alt="" loading="lazy"></div>
+            <div><h6>Highlights</h6><ul><li>Black &amp; white rhino, reticulated giraffe</li><li>Ol Pejeta — home to the last two northern white rhinos</li><li>Bush walks, camel treks, horseback safaris</li><li>Samburu &amp; Maasai cultural immersion</li></ul></div>
+            <div><h6>Included</h6><ul><li>Full board in luxury lodges</li><li>Conservancy fees</li><li>Private 4x4 with guide-driver</li><li>24/7 support</li></ul></div>
+            <a class="btn btn-ox" href="#/plan?trip=Laikipia%20%26%20Ol%20Pejeta%20Wilderness" data-route>Enquire about this trip</a>
+          </aside>
+        </div></div></div>
+      </article>
+
+      <article class="itin" id="northern-frontier">
+        <button class="itin-head" aria-expanded="false"><span class="d">7<small>days</small></span><div><h3>The Northern Frontier Adventure</h3><div class="route">Wajir · Marsabit · Chalbi Desert · Lake Turkana</div></div><span class="plus"></span></button>
+        <div class="itin-body"><div><div class="itin-inner">
+          <div class="days">
+            <div class="day"><span class="dn">Days 1–2</span><div><h5>Nairobi to Wajir</h5><p>Fly to Wajir and step into the cultures of the Somali and Borana communities — the Wajir Museum, village visits and a night in a local lodge.</p></div></div>
+            <div class="day"><span class="dn">Days 2–3</span><div><h5>Marsabit National Park</h5><p>Forested highlands rising from the desert, elephants and leopards, the crater lake of Lake Paradise and the traditions of the Rendille people.</p></div></div>
+            <div class="day"><span class="dn">Days 4–5</span><div><h5>The Jade Sea</h5><p>Cross the Chalbi Desert to Lake Turkana. Explore the volcanic craters of Central Island, meet Turkana communities and camp under the stars beside the world’s largest desert lake.</p></div></div>
+            <div class="day"><span class="dn">Days 6–7</span><div><h5>Return south</h5><p>Back across the Chalbi, a farewell dinner in Marsabit and the journey home to Nairobi.</p></div></div>
+          </div>
+          <aside class="itin-side">
+            <div class="media"><img src="images/ele-frame.webp" alt="" loading="lazy"></div>
+            <div><h6>Highlights</h6><ul><li>Kenya’s least-visited regions</li><li>Lake Turkana &amp; Central Island</li><li>Marsabit’s Lake Paradise</li><li>Somali, Borana, Rendille &amp; Turkana cultures</li></ul></div>
+            <div><h6>Included</h6><ul><li>6 nights in lodges and camps, full board</li><li>Private 4x4 with guide-driver</li><li>Park fees</li><li>24/7 support</li></ul></div>
+            <a class="btn btn-ox" href="#/plan?trip=The%20Northern%20Frontier%20Adventure" data-route>Enquire about this trip</a>
+          </aside>
+        </div></div></div>
+      </article>
+
+      <article class="itin" id="south-coast">
+        <button class="itin-head" aria-expanded="false"><span class="d">7<small>days</small></span><div><h3>The Magical South Coast Escape</h3><div class="route">Diani · Wasini Island · Kisite Mpunguti · Shimba Hills</div></div><span class="plus"></span></button>
+        <div class="itin-body"><div><div class="itin-inner">
+          <div class="days">
+            <div class="day"><span class="dn">Day 1</span><div><h5>Arrive in Diani</h5><p>Fly or drive from Nairobi to the south coast and check in to a luxury beachfront resort. Sunset cocktails and a candlelit dinner.</p></div></div>
+            <div class="day"><span class="dn">Days 2–3</span><div><h5>Wasini Island &amp; the marine park</h5><p>Sail by dhow to Wasini Island, snorkel the Kisite Mpunguti Marine Park, look for dolphins and enjoy a Swahili seafood lunch.</p></div></div>
+            <div class="day"><span class="dn">Days 4–5</span><div><h5>Shimba Hills safari</h5><p>Elephants, giraffe and rare sable antelope in the Shimba Hills National Reserve, a picnic at Sheldrick Falls, then spa time, the infinity pool and Swahili fine dining.</p></div></div>
+            <div class="day"><span class="dn">Day 6</span><div><h5>Beach, culture &amp; bonfire</h5><p>Water sports or beach yoga, a Swahili village or Kaya forest cultural tour, and a beachfront barbecue with live music or a bonfire.</p></div></div>
+            <div class="day"><span class="dn">Day 7</span><div><h5>Departure</h5><p>A last ocean breakfast before your onward journey.</p></div></div>
+          </div>
+          <aside class="itin-side">
+            <div class="media"><img src="images/balloons.webp" alt="" loading="lazy" style="object-position:top"></div>
+            <div><h6>Highlights</h6><ul><li>Diani Beach</li><li>Wasini Island excursion</li><li>Shimba Hills safari</li><li>Water sports, spa &amp; wellness</li></ul></div>
+            <div><h6>Included</h6><ul><li>Accommodation, tours &amp; safaris</li><li>Internal flights &amp; private transfers</li></ul></div>
+            <a class="btn btn-ox" href="#/plan?trip=The%20Magical%20South%20Coast%20Escape" data-route>Enquire about this trip</a>
+            <p class="note">Minimum of six guests. Price per person based on two adults sharing.</p>
+          </aside>
+        </div></div></div>
+      </article>
+
+      <article class="itin" id="malindi-watamu">
+        <button class="itin-head" aria-expanded="false"><span class="d">6<small>days</small></span><div><h3>Malindi &amp; Watamu Beach Retreat</h3><div class="route">Malindi · Watamu Marine Park · Mida Creek · Gede Ruins</div></div><span class="plus"></span></button>
+        <div class="itin-body"><div><div class="itin-inner">
+          <div class="days">
+            <div class="day"><span class="dn">Day 1</span><div><h5>Arrive in Malindi</h5><p>Fly or drive to Malindi and settle into a luxury beachfront resort, with a coastal seafood dinner to begin.</p></div></div>
+            <div class="day"><span class="dn">Days 2–3</span><div><h5>Watamu Marine Park &amp; Mida Creek</h5><p>Snorkel or glass-bottom boat over the reefs of Watamu Marine National Park, then a dhow cruise or mangrove kayaking on Mida Creek.</p></div></div>
+            <div class="day"><span class="dn">Day 4</span><div><h5>The Gede Ruins</h5><p>Explore the 13th-century Swahili settlement of Gede, browse craft markets and, if you like, join a Swahili cooking class.</p></div></div>
+            <div class="day"><span class="dn">Day 5</span><div><h5>Malindi heritage</h5><p>The Vasco da Gama Pillar and the Portuguese Chapel, followed by a private dinner on the beach.</p></div></div>
+            <div class="day"><span class="dn">Day 6</span><div><h5>Departure</h5><p>Farewell to the coast.</p></div></div>
+          </div>
+          <aside class="itin-side">
+            <div class="media"><img src="images/leopard-cub-p.webp" alt="" loading="lazy"></div>
+            <div><h6>For</h6><ul><li>Couples, families and solo travellers</li></ul></div>
+            <div><h6>Included</h6><ul><li>Accommodation &amp; all meals</li><li>Private 4x4 &amp; park fees</li><li>24/7 support</li></ul></div>
+            <a class="btn btn-ox" href="#/plan?trip=Malindi%20%26%20Watamu%20Beach%20Retreat" data-route>Enquire about this trip</a>
+            <p class="note">Minimum of six guests.</p>
+          </aside>
+        </div></div></div>
+      </article>
+
+      <article class="itin" id="ultimate-kenya">
+        <button class="itin-head" aria-expanded="false"><span class="d">10<small>days</small></span><div><h3>The Ultimate Kenya North &amp; South</h3><div class="route">Samburu · Ol Pejeta · Laikipia · Amboseli · Tsavo · Diani</div></div><span class="plus"></span></button>
+        <div class="itin-body"><div><div class="itin-inner">
+          <div class="days">
+            <div class="day"><span class="dn">Days 1–2</span><div><h5>Samburu</h5><p>North to Samburu National Reserve for Grevy’s zebra, reticulated giraffe and Somali ostrich, a village visit, a sunset drive and a bush dinner.</p></div></div>
+            <div class="day"><span class="dn">Days 3–4</span><div><h5>Ol Pejeta &amp; Laikipia</h5><p>The rhino sanctuary and Big Five at Ol Pejeta, then a private Laikipia conservancy: nature walks, horseback and bonfire storytelling.</p></div></div>
+            <div class="day"><span class="dn">Day 5</span><div><h5>Amboseli</h5><p>Fly south to Amboseli for elephant herds and a Kilimanjaro sundowner.</p></div></div>
+            <div class="day"><span class="dn">Days 6–7</span><div><h5>Tsavo</h5><p>Mzima Springs, the Shetani lava flows and Tsavo’s famous red-dust elephants.</p></div></div>
+            <div class="day"><span class="dn">Days 8–9</span><div><h5>Diani</h5><p>Wasini Island, snorkelling at Kisite, spa time and an optional sunset dhow.</p></div></div>
+            <div class="day"><span class="dn">Day 10</span><div><h5>Departure</h5><p>Homeward from the coast.</p></div></div>
+          </div>
+          <aside class="itin-side">
+            <div class="media"><img src="images/ele-green.webp" alt="" loading="lazy"></div>
+            <div><h6>Highlights</h6><ul><li>Kenya’s diverse landscapes in one arc</li><li>Rugged north to pristine beaches</li><li>Daily game drives</li></ul></div>
+            <div><h6>Included</h6><ul><li>9 nights luxury accommodation, full board with themed dinners</li><li>Private 4x4 &amp; park fees</li><li>24/7 support</li></ul></div>
+            <a class="btn btn-ox" href="#/plan?trip=The%20Ultimate%20Kenya%20North%20%26%20South" data-route>Enquire about this trip</a>
+          </aside>
+        </div></div></div>
+      </article>
+
+      <article class="itin" id="mt-kenya">
+        <button class="itin-head" aria-expanded="false"><span class="d">7<small>days</small></span><div><h3>Mount Kenya Trek &amp; Meru Safari</h3><div class="route">Sirimon route · Point Lenana · Meru National Park</div></div><span class="plus"></span></button>
+        <div class="itin-body"><div><div class="itin-inner">
+          <div class="days">
+            <div class="day"><span class="dn">Day 1</span><div><h5>To the mountain</h5><p>Nairobi to a base lodge at the foot of Mount Kenya for a briefing and an early night.</p></div></div>
+            <div class="day"><span class="dn">Day 2</span><div><h5>Sirimon Gate to Old Moses Camp</h5><p>Through the forest and moorland to Old Moses Camp at 3,300 m.</p></div></div>
+            <div class="day"><span class="dn">Day 3</span><div><h5>Mackinder Valley to Shipton’s Camp</h5><p>Giant lobelias and groundsel line the valley on the way to Shipton’s Camp at 4,200 m.</p></div></div>
+            <div class="day"><span class="dn">Day 4</span><div><h5>Point Lenana at sunrise</h5><p>A pre-dawn push to Point Lenana, 4,985 m, for sunrise; descend to the base lodge with an optional massage waiting.</p></div></div>
+            <div class="day"><span class="dn">Days 5–6</span><div><h5>Meru National Park</h5><p>A luxury lodge or camp in the untamed Meru — game drives, the rhino sanctuary or a walking safari, then sundowners and a bush dinner.</p></div></div>
+            <div class="day"><span class="dn">Day 7</span><div><h5>Return to Nairobi</h5><p>Homeward, with the summit behind you.</p></div></div>
+          </div>
+          <aside class="itin-side">
+            <div class="media"><img src="images/mtkenya-p.webp" alt="The snow-dusted peak of Mount Kenya" loading="lazy"></div>
+            <div><h6>Highlights</h6><ul><li>Summit sunrise at Point Lenana</li><li>Afro-alpine scenery</li><li>Meru’s untamed wilderness</li></ul></div>
+            <div><h6>Included</h6><ul><li>6 nights in mountain huts, lodges &amp; camps</li><li>Full board with campfire meals</li><li>Mount Kenya &amp; Meru park fees</li><li>Private 4x4 &amp; 24/7 support</li></ul></div>
+            <a class="btn btn-ox" href="#/plan?trip=Mount%20Kenya%20Trek%20%26%20Meru%20Safari" data-route>Enquire about this trip</a>
+          </aside>
+        </div></div></div>
+      </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" style="min-height:60svh">
+    <img src="images/hero.webp" alt="" loading="lazy" data-parallax="0.15">
+    <div class="wrap">
+      <span class="eyebrow no-rule" data-reveal>Something else in mind?</span>
+      <h2 class="display h-l words" data-words>No two safaris <em>alike</em></h2>
+      <p class="lede" data-reveal style="max-width:46ch;color:rgba(245,239,227,.85)">Let us know your vision and we’ll transform it into an itinerary that captures the essence of your dream trip.</p>
+      <div class="hero-cta" data-reveal style="justify-content:center"><a class="btn btn-gold" href="#/plan" data-route>Design my safari</a></div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================================================== ABOUT -->
+<section class="view" data-view="about">
+  <div class="page-hero">
+    <img src="images/maasai-wide.webp" alt="" style="object-position:center 35%">
+    <div class="wrap">
+      <span class="crumbs"><a href="#/" data-route>Home</a> &nbsp;/&nbsp; About</span>
+      <h1 class="display h-xl words" data-words>Sharing the Kenya <em>we</em> know and love</h1>
+      <p class="lede" style="color:rgba(245,239,227,.85)">A proudly female-owned, Nairobi-based safari house, founded to redefine how Kenya is experienced by travellers worldwide.</p>
+    </div>
+  </div>
+
+  <section class="section paper">
+    <div class="wrap story">
+      <div class="story-media">
+        <div class="reveal-img main" data-reveal="img"><img src="images/leopard-rest.webp" alt="Lioness at dawn on the Mara" loading="lazy"></div>
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:18px">
+          <div class="reveal-img" data-reveal="img" style="aspect-ratio:1"><img src="images/landcruiser.webp" alt="A Sarabi Savanna Land Cruiser" loading="lazy" style="object-position:center 60%"></div>
+          <div class="reveal-img" data-reveal="img" style="aspect-ratio:1"><img src="images/cheetah-vehicle.webp" alt="Cheetahs on a safari vehicle" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="story-text">
+        <span class="eyebrow" data-reveal>Our founder &amp; her story</span>
+        <h2 class="display h-m words" data-words>Kenya beyond <em>the</em> postcards</h2>
+        <p data-reveal>Sarabi Savanna is a proudly female-owned business, founded by someone with a deep-rooted love for Kenya and its breathtaking landscapes. Growing up, her family — especially her father — instilled a passion for safaris, with countless trips across the country, from the famous Maasai Mara to hidden gems few visitors ever see. Back then, it was simply home; something so familiar it was easy to take for granted.</p>
+        <p class="pull" data-reveal>“Many people didn’t see Kenya the way I did. Their view was often limited or overshadowed by misconceptions.”</p>
+        <p data-reveal>Everything changed with a move to the UK. Travelling widely and meeting people from all over the world revealed something surprising: Kenya’s vibrancy, its culture and the warmth of its people were largely unknown. That realisation sparked Sarabi Savanna — a company founded to share the Kenya she knows and loves with the world.</p>
+        <p data-reveal>Whether it’s the vast, wildlife-rich plains of the Maasai Mara, the rhino sanctuaries of Ol Pejeta, the rugged beauty of Laikipia or corners of the country few get to experience, Sarabi Savanna is here to open up Kenya’s magic to you. Every traveller is different, and so is every safari we create.</p>
+        <div data-reveal><a class="btn btn-ox" href="#/plan" data-route>Start planning with us</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid g-2" style="align-items:end">
+        <div><span class="eyebrow" data-reveal>Vision &amp; mission</span><h2 class="display h-l words" data-words style="margin-top:18px">Exclusive, <em>transformative</em> safari experiences</h2></div>
+        <p class="lede muted" data-reveal>Our vision is to be Kenya’s leading provider of exclusive and transformative safari experiences, renowned for exceptional service, quality, innovation and sustainability.</p>
+      </div>
+      <div class="values">
+        <div class="value" data-reveal><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 30c8-14 28-14 36 0M12 36c6-8 18-8 24 0M20 42c2-3 6-3 8 0"/></svg><h4>Expertly guided safaris</h4><p>Showcasing the richness of Kenya’s landscapes, from the vast savannas to the majestic mountains and the serene coastlines.</p></div>
+        <div class="value" data-reveal><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="24" cy="16" r="6"/><path d="M10 40c0-8 6-12 14-12s14 4 14 12"/></svg><h4>Collaborating with communities</h4><p>Ensuring our tourism efforts benefit the people who live closest to these natural treasures.</p></div>
+        <div class="value" data-reveal><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M24 42c-10 0-16-8-16-16 0-10 8-18 16-22 8 4 16 12 16 22 0 8-6 16-16 16zM24 42V20"/></svg><h4>Minimising our footprint</h4><p>Promoting eco-friendly practices and reducing waste on all our excursions.</p></div>
+        <div class="value" data-reveal><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 34c6 0 8-10 16-10s10 10 16 10M6 22l6-8 6 8M30 22l6-8 6 8"/></svg><h4>Protecting endangered species</h4><p>Advocating for wildlife and raising awareness of the importance of biodiversity.</p></div>
+        <div class="value" data-reveal><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 40L24 8l16 32H8zM24 20v12"/></svg><h4>Planning the perfect adventure</h4><p>Helping international travellers plan the finest locations, exceptional accommodation and activities.</p></div>
+        <div class="value" data-reveal><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M17 24l5 5 9-10"/></svg><h4>Integrity &amp; trust</h4><p>Fair, open practices and honest pricing — a straightforward approach in an industry where transparency is often lacking.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section paper-2">
+    <div class="wrap">
+      <div class="grid g-2" style="align-items:end">
+        <div><span class="eyebrow" data-reveal>Transport &amp; services</span><h2 class="display h-l words" data-words style="margin-top:18px">Travel in <em>comfort</em>, from arrival to departure</h2></div>
+        <p class="lede muted" data-reveal>Our fleet and services are built around the wild — and around you.</p>
+      </div>
+      <div class="services">
+        <div class="fleet">
+          <figure><div class="reveal-img" data-reveal="img" style="height:100%"><img src="images/landcruiser.webp" alt="Sarabi Savanna 4x4 Land Cruiser" loading="lazy"></div><figcaption>Our 4x4 Land Cruisers</figcaption></figure>
+          <figure><div class="reveal-img" data-reveal="img" style="height:100%"><img src="images/cheetah-vehicle.webp" alt="Cheetahs on a safari vehicle in the Mara" loading="lazy"></div><figcaption>Close encounters, safely</figcaption></figure>
+        </div>
+        <div class="service-list stagger" data-reveal="stagger">
+          <div class="service"><h4>4x4 Land Cruisers</h4><p>Rugged, expertly maintained and designed for the wild: comfortable seating, panoramic windows for wildlife viewing, communication systems for your safety and special lighting for seamless night game drives.</p></div>
+          <div class="service"><h4>Airport transfers</h4><p>Arrive in style. Whether you land in Nairobi or any other major Kenyan airport, our professional drivers ensure a seamless, punctual transition from the terminal to your destination.</p></div>
+          <div class="service"><h4>Helicopters &amp; hot air balloons</h4><p>Soar above the rolling plains of the Maasai Mara and the dramatic escarpments of the Rift Valley for views that stay with you forever.</p></div>
+          <div class="service"><h4>Transport hire</h4><p>From spacious buses to luxury minibuses, maintained to the highest standards — ideal for group outings, conferences and special events.</p></div>
+          <div class="service"><h4>Nairobi city tours</h4><p>Historical landmarks, bustling markets and cultural highlights — a snapshot of the capital’s charm in a few hours or a full day.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" style="min-height:60svh">
+    <img src="images/lion-wide.webp" alt="" loading="lazy" data-parallax="0.15">
+    <div class="wrap">
+      <span class="eyebrow no-rule" data-reveal>Partners &amp; trade</span>
+      <h2 class="display h-l words" data-words>A trusted partner <em>for</em> international tour operators</h2>
+      <p class="lede" data-reveal style="max-width:48ch;color:rgba(245,239,227,.85)">Our commitment to quality, sustainability and guest satisfaction makes Sarabi Savanna the ideal ground partner for agencies bringing travellers to Kenya.</p>
+      <div class="hero-cta" data-reveal style="justify-content:center"><a class="btn btn-gold" href="#/plan" data-route>Talk to us</a></div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================================================== PLAN -->
+<section class="view" data-view="plan">
+  <div class="page-hero" style="min-height:62svh">
+    <img src="images/balloons-wide.webp" alt="" style="object-position:center 35%">
+    <div class="wrap">
+      <span class="crumbs"><a href="#/" data-route>Home</a> &nbsp;/&nbsp; Plan your safari</span>
+      <h1 class="display h-xl words" data-words>Let’s plan your <em>once-in-a-lifetime</em> experience</h1>
+      <p class="lede" style="color:rgba(245,239,227,.85)">Tell us where you want to go, the pace you enjoy and what matters most. We’ll design a tailored itinerary around your priorities — and aim to reply within 24 hours.</p>
+    </div>
+  </div>
+
+  <section class="section paper">
+    <div class="wrap plan-grid">
+      <div>
+        <span class="eyebrow" data-reveal>Enquiry</span>
+        <h2 class="display h-m words" data-words style="margin:18px 0 34px">Your safari, <em>in</em> your words</h2>
+        <form class="form" id="planForm" novalidate data-reveal="fade">
+          <div class="row">
+            <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="f-phone">Phone / WhatsApp</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="f-country">Country of residence</label><input id="f-country" name="country" type="text" autocomplete="country-name"></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="f-dates">Preferred travel dates</label><input id="f-dates" name="dates" type="text" placeholder="e.g. Late August 2027, flexible"></div>
+            <div class="field"><label for="f-guests">Travellers</label><select id="f-guests" name="guests"><option>2 adults</option><option>1 adult</option><option>2 adults + children</option><option>3–5 guests</option><option>6+ guests / group</option></select></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="f-trip">Journey you’re interested in</label><select id="f-trip" name="trip"><option>Not sure yet — help me choose</option><option>The Great Migration Safari</option><option>Laikipia &amp; Ol Pejeta Wilderness</option><option>The Northern Frontier Adventure</option><option>The Magical South Coast Escape</option><option>Malindi &amp; Watamu Beach Retreat</option><option>The Ultimate Kenya North &amp; South</option><option>Mount Kenya Trek &amp; Meru Safari</option><option>Tanzania / Kenya–Tanzania combination</option><option>Something fully bespoke</option></select></div>
+            <div class="field"><label for="f-length">Trip length</label><select id="f-length" name="length"><option>5–7 days</option><option>3–4 days</option><option>8–10 days</option><option>11–14 days</option><option>Longer</option></select></div>
+          </div>
+          <div class="field">
+            <label>What matters most?</label>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="interests" value="Wildlife & Big Five"><span>Wildlife &amp; Big Five</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="The Great Migration"><span>The Great Migration</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="Photography"><span>Photography</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="Culture & community"><span>Culture &amp; community</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="Honeymoon / romance"><span>Honeymoon</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="Family"><span>Family</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="Beach & coast"><span>Beach &amp; coast</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="Balloon / helicopter"><span>Balloon &amp; helicopter</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="Trekking & adventure"><span>Trekking &amp; adventure</span></label>
+            </div>
+          </div>
+          <div class="field"><label for="f-msg">Tell us about your dream trip</label><textarea id="f-msg" name="message" placeholder="Interests, pace, style of stay, special occasions, anything at all…"></textarea></div>
+          <div class="form-actions">
+            <button class="btn btn-ox" type="submit" data-send="email">Send enquiry <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+            <button class="btn btn-ghost" type="button" data-send="whatsapp"><svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.4z"/></svg> Send via WhatsApp</button>
+            <p class="form-note">Your enquiry opens in your email or WhatsApp app, pre-filled and ready to send. No account needed.</p>
+          </div>
+        </form>
+        <div class="form-done" id="formDone">
+          <span class="eyebrow no-rule">Asante sana</span>
+          <h3 class="display h-s">Your enquiry is on its way.</h3>
+          <p class="muted">We’ll be in touch within 24 hours to start shaping your safari. If your email app didn’t open, write to us directly at <a href="mailto:info@sarabisavanna.com" style="color:var(--gold-2)">info@sarabisavanna.com</a> or call <a href="tel:+254708010499" style="color:var(--gold-2)">+254 708 010 499</a>.</p>
+        </div>
+      </div>
+      <aside class="contact-card" data-reveal="right">
+        <p class="big">Prefer to <em class="serif-i" style="color:var(--gold-2)">talk</em>? We’re online Monday to Saturday.</p>
+        <dl>
+          <div><dt>Call or WhatsApp</dt><dd><a class="wa" href="https://wa.me/254708010499" target="_blank" rel="noopener">+254 708 010 499</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:info@sarabisavanna.com">info@sarabisavanna.com</a></dd></div>
+          <div><dt>Office</dt><dd>2nd Floor, Apricot Suites<br>Fourth Parklands Avenue, Parklands<br>P.O. Box 42902-00100, Nairobi, Kenya</dd></div>
+          <div><dt>Hours</dt><dd>Monday – Saturday, 8:00 – 18:00 EAT</dd></div>
+        </dl>
+        <div class="badge"><b>TRA</b>Registered with Kenya’s Tourism Regulatory Authority</div>
+      </aside>
+    </div>
+
+    <div class="wrap faq">
+      <div><span class="eyebrow" data-reveal>Good to know</span><h2 class="display h-m words" data-words style="margin-top:18px">Before you <em>go</em></h2></div>
+      <div id="faq">
+        <div class="qa"><button aria-expanded="false"><span>How does booking work?</span><i>+</i></button><div class="a"><div><p>Once your itinerary is refined and you’re ready to proceed, a full payment secures your booking, covering accommodation, flights and any necessary fees. We pride ourselves on a transparent pricing model that ensures more of your investment supports local communities and conservation.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false"><span>Can I change a ready-made trip?</span><i>+</i></button><div class="a"><div><p>Absolutely. Adjust travel dates, add special activities, choose accommodation that fits your style — every itinerary is a starting point, not a fixed product.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false"><span>What support do I have during the trip?</span><i>+</i></button><div class="a"><div><p>You’ll be welcomed on arrival by one of our team, and you’ll have our contact details for immediate support throughout — whether it’s a delayed flight or a last-minute restaurant reservation.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false"><span>When is the best time to visit?</span><i>+</i></button><div class="a"><div><p>Late June to October is the most popular window — dry months that coincide with the wildebeest migration’s arrival on the Mara. But every season has its rewards, and the coast is wonderful from January to March. We’ll advise for your route.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false"><span>Do you work with tour operators?</span><i>+</i></button><div class="a"><div><p>Yes. Sarabi Savanna is an ideal ground partner for international tour companies seeking unforgettable safari experiences in Kenya for their clients.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="about">
+        <a class="brand" href="#/" data-route><img src="images/logo-mark.png" alt="Sarabi Savanna"><span><span class="word">Sarabi Savanna</span><span class="tag">Where Wilderness Meets Wonder</span></span></a>
+        <p>A premier safari house based in the heart of Nairobi, offering tailor-made wildlife and adventure experiences across Kenya and Tanzania for travellers from around the globe.</p>
+        <div class="badge"><b>TRA</b>Tourism Regulatory Authority · Kenya</div>
+      </div>
+      <div><h5>Explore</h5><ul><li><a href="#/destinations" data-route>Destinations</a></li><li><a href="#/safaris" data-route>Safaris &amp; journeys</a></li><li><a href="#/about" data-route>Our story</a></li><li><a href="#/plan" data-route>Plan your safari</a></li></ul></div>
+      <div><h5>Journeys</h5><ul><li><a href="#/safaris/great-migration" data-route>Great Migration Safari</a></li><li><a href="#/safaris/laikipia" data-route>Laikipia &amp; Ol Pejeta</a></li><li><a href="#/safaris/northern-frontier" data-route>Northern Frontier</a></li><li><a href="#/safaris/ultimate-kenya" data-route>Ultimate Kenya</a></li><li><a href="#/safaris/south-coast" data-route>South Coast Escape</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="tel:+254708010499">+254 708 010 499</a></li><li><a href="https://wa.me/254708010499" target="_blank" rel="noopener">WhatsApp us</a></li><li><a href="mailto:info@sarabisavanna.com">info@sarabisavanna.com</a></li><li>2nd Floor, Apricot Suites, Parklands<br>P.O. Box 42902-00100, Nairobi</li><li>Mon – Sat, 8:00 – 18:00 EAT</li></ul></div>
+    </div>
+    <div class="footer-word" aria-hidden="true">Sarabi Savanna</div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Sarabi Savanna. All rights reserved.</span>
+      <span>Wildlife photography © Sarabi Savanna · Select landscapes via Wikimedia Commons (CC&nbsp;BY / CC&nbsp;BY-SA / public domain)</span>
+      <span><a href="#/plan" data-route>Enquire</a> &nbsp;·&nbsp; <a href="#top" id="toTop">Back to top</a></span>
+    </div>
+  </div>
+</footer>
+
+<style>
+.coast-panel{position:relative;background:linear-gradient(160deg,#1D3F45 0%,#2E6B74 45%,#C9A968 100%);display:grid;place-items:center;overflow:hidden}
+.coast-panel::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 70% 30%,rgba(255,236,190,.35),transparent 70%)}
+.coast-panel::after{content:"Diani · Watamu · Malindi";position:relative;font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(26px,3vw,44px);color:var(--sand-2);letter-spacing:.02em;text-align:center;padding:20px}
+.coast-panel i{position:absolute;left:-10%;right:-10%;height:1px;background:rgba(245,239,227,.35);animation:wave 7s ease-in-out infinite}
+.coast-panel i:nth-child(1){top:62%}.coast-panel i:nth-child(2){top:70%;animation-delay:-2s}.coast-panel i:nth-child(3){top:78%;animation-delay:-4s}
+@keyframes wave{0%,100%{transform:translateX(-3%) scaleY(1)}50%{transform:translateX(3%)}}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script>
+(function(){
+'use strict';
+const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hasGsap=typeof gsap!=='undefined'&&typeof ScrollTrigger!=='undefined';
+if(hasGsap) gsap.registerPlugin(ScrollTrigger);
+
+/* ---------- smooth scroll ---------- */
+let lenis=null;
+if(!reduced&&typeof Lenis!=='undefined'&&hasGsap){
+  lenis=new Lenis({lerp:.085,smoothWheel:true,wheelMultiplier:.95});
+  lenis.on('scroll',ScrollTrigger.update);
+  gsap.ticker.add(t=>lenis.raf(t*1000));
+  gsap.ticker.lagSmoothing(0);
+}
+const scrollTo=(y,opts={})=>{ if(lenis) lenis.scrollTo(y,{immediate:!!opts.immediate,offset:opts.offset||0,duration:1.2}); else { const top=typeof y==='number'?y:(y.getBoundingClientRect().top+scrollY+(opts.offset||0)); window.scrollTo({top,behavior:opts.immediate?'auto':'smooth'}); } };
+
+/* ---------- word splitting ---------- */
+function splitWords(el){
+  if(el.dataset.split) return; el.dataset.split='1';
+  const frag=document.createDocumentFragment();
+  const wrapWord=(text,tag)=>{ const w=document.createElement('span'); w.className='w'; const inner=document.createElement('span'); if(tag){ const t=document.createElement(tag); t.textContent=text; inner.appendChild(t);} else inner.textContent=text; w.appendChild(inner); return w; };
+  [...el.childNodes].forEach(node=>{
+    const tag=node.nodeType===1?node.tagName.toLowerCase():null;
+    const text=node.textContent;
+    text.split(/(\s+)/).forEach(part=>{
+      if(!part) return;
+      if(/^\s+$/.test(part)) frag.appendChild(document.createTextNode(' '));
+      else frag.appendChild(wrapWord(part,tag));
+    });
+  });
+  el.textContent=''; el.appendChild(frag);
+  const base=parseFloat(el.dataset.delay||0);
+  $$('.w>span',el).forEach((s,i)=>{ s.style.transitionDelay=(base+Math.min(i*.055,1.1))+'s'; });
+}
+$$('[data-words]').forEach(splitWords);
+$$('[data-scrub]').forEach(el=>{
+  const frag=document.createDocumentFragment();
+  [...el.childNodes].forEach(node=>{
+    const isEl=node.nodeType===1;
+    node.textContent.split(/(\s+)/).forEach(part=>{
+      if(!part) return;
+      if(/^\s+$/.test(part)) return frag.appendChild(document.createTextNode(' '));
+      const s=document.createElement('span'); s.className='sw'+(isEl?' serif-i':''); s.textContent=part; frag.appendChild(s);
+    });
+  });
+  el.textContent=''; el.appendChild(frag);
+});
+
+/* ---------- reveals (global observer) ---------- */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target);} });
+},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+$$('[data-reveal],.words,.stagger').forEach(el=>{ if(!el.classList.contains('reveal-img')) io.observe(el); });
+// clip-path zeroes intersectionRatio in Chromium, so masked images use a threshold-0 observer
+const io2=new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-in'); io2.unobserve(e.target);} }); },{rootMargin:'0px 0px -12% 0px',threshold:0});
+$$('.reveal-img').forEach(el=>io2.observe(el));
+// hero words fire on load
+$$('.hero .words').forEach(el=>setTimeout(()=>el.classList.add('is-in'),150));
+
+/* ---------- nav ---------- */
+const nav=$('#nav'); let lastY=0;
+function onScroll(){
+  const y=scrollY; nav.classList.toggle('is-scrolled',y>40);
+  if(y>360&&y>lastY+6&&!document.body.classList.contains('menu-open')) nav.classList.add('is-hidden'); else if(y<lastY-4||y<360) nav.classList.remove('is-hidden');
+  lastY=y;
+}
+addEventListener('scroll',onScroll,{passive:true}); onScroll();
+const burger=$('#burger');
+function setMenu(open){ document.body.classList.toggle('menu-open',open); burger.setAttribute('aria-expanded',open); $('#menu').setAttribute('aria-hidden',!open); if(lenis){ open?lenis.stop():lenis.start(); } }
+burger.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
+addEventListener('keydown',e=>{ if(e.key==='Escape'&&document.body.classList.contains('menu-open')) setMenu(false); });
+
+/* ---------- cursor ---------- */
+const cur=$('.cursor');
+if(matchMedia('(pointer:fine)').matches&&!reduced){
+  let cx=innerWidth/2,cy=innerHeight/2,tx=cx,ty=cy;
+  addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;},{passive:true});
+  (function loop(){ cx+=(tx-cx)*.22; cy+=(ty-cy)*.22; cur.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`; requestAnimationFrame(loop); })();
+  document.addEventListener('mouseover',e=>{
+    const v=e.target.closest('[data-cursor="view"]');
+    cur.classList.toggle('is-view',!!v);
+  });
+}
+
+/* ---------- hero dust ---------- */
+(function dust(){
+  const c=$('#dust'); if(!c||reduced) return; const ctx=c.getContext('2d'); let W,H,P=[],run=true;
+  let cw=0,chh=0; const size=()=>{cw=c.offsetWidth;chh=c.offsetHeight;W=c.width=Math.round(cw*devicePixelRatio);H=c.height=Math.round(chh*devicePixelRatio);};
+  size(); addEventListener('resize',size);
+  for(let i=0;i<70;i++) P.push({x:Math.random(),y:Math.random(),r:.6+Math.random()*1.8,s:.00008+Math.random()*.00022,a:.15+Math.random()*.45,o:Math.random()*6.28});
+  const vis=new IntersectionObserver(e=>{run=e[0].isIntersecting;}); vis.observe(c);
+  let t=0; (function frame(){ if(run){ if(c.offsetWidth!==cw||c.offsetHeight!==chh) size(); t+=1; ctx.clearRect(0,0,W,H); P.forEach(p=>{ p.x+=Math.sin(t*.004+p.o)*.00025+p.s*.4; p.y-=p.s; if(p.y<-.02){p.y=1.02;p.x=Math.random();} const tw=.6+.4*Math.sin(t*.03+p.o); ctx.beginPath(); ctx.arc(p.x*W,p.y*H,p.r*devicePixelRatio,0,6.28); ctx.fillStyle=`rgba(234,194,122,${p.a*tw})`; ctx.fill(); }); } requestAnimationFrame(frame); })();
+})();
+
+/* ---------- router ---------- */
+const views={}; $$('.view').forEach(v=>views[v.dataset.view]=v);
+const titles={home:'Sarabi Savanna — Luxury safaris in Kenya & Tanzania',destinations:'Destinations — Sarabi Savanna',safaris:'Safaris & Journeys — Sarabi Savanna',about:'Our Story — Sarabi Savanna',plan:'Plan Your Safari — Sarabi Savanna'};
+let current='home', ctx=null, transitioning=false;
+function parse(){ const h=location.hash.replace(/^#\/?/,''); const [pathq]=[h]; const [path,q]=pathq.split('?'); const parts=path.split('/').filter(Boolean); return {view:parts[0]||'home',sub:parts[1]||null,q:new URLSearchParams(q||'')}; }
+const curtain=$('.curtain');
+function curtainIn(){ if(!hasGsap||reduced){curtain.style.clipPath='inset(0 0 0 0)';return Promise.resolve();} return new Promise(r=>{ gsap.set(curtain,{clipPath:'inset(100% 0% 0% 0%)'}); gsap.timeline({onComplete:r}).to(curtain,{clipPath:'inset(0% 0% 0% 0%)',duration:.75,ease:'power4.inOut'}).fromTo('.curtain .mark',{opacity:0,scale:.9},{opacity:1,scale:1,duration:.5,ease:'power3.out'},'-=.3'); }); }
+function curtainOut(){ if(!hasGsap||reduced){curtain.style.clipPath='inset(100% 0 0 0)';return Promise.resolve();} return new Promise(r=>{ gsap.timeline({onComplete:()=>{gsap.set(curtain,{clipPath:'inset(100% 0% 0% 0%)'});r();}}).to('.curtain .mark',{opacity:0,scale:1.05,duration:.35,ease:'power2.in'}).to(curtain,{clipPath:'inset(0% 0% 100% 0%)',duration:.8,ease:'power4.inOut'},'-=.15'); }); }
+function setActiveNav(view){ $$('[data-nav]').forEach(a=>a.classList.toggle('is-active',a.dataset.nav===view)); }
+function afterShow(view,sub,q){
+  document.title=titles[view]||titles.home; setActiveNav(view);
+  if(view==='safaris'&&sub){ const it=document.getElementById(sub); if(it){ openItin(it,true); setTimeout(()=>scrollTo(it,{offset:-90}),350); } }
+  if(view==='destinations'&&sub){ const map={mara:'d-mara',amboseli:'d-amboseli',laikipia:'d-laikipia',samburu:'d-samburu',coast:'d-coast',tanzania:null}; const id=map[sub]; if(id){ const el=document.getElementById(id); if(el) setTimeout(()=>scrollTo(el,{offset:-110}),350);} else if(sub==='tanzania'){ const el=$('[data-view="destinations"] .region.paper'); if(el) setTimeout(()=>scrollTo(el,{offset:-60}),350);} }
+  if(view==='plan'){ const t=q.get('trip'); if(t){ const sel=$('#f-trip'); [...sel.options].forEach(o=>{ if(o.text===t) sel.value=o.text; }); } }
+}
+async function go(route,first){
+  const {view,sub,q}=parse(); const target=views[view]?view:'home';
+  if(first){ views[target].classList.add('is-active'); if(target!=='home') views.home.classList.remove('is-active'); current=target; initView(target); afterShow(target,sub,q); return; }
+  if(target===current){ afterShow(target,sub,q); return; }
+  if(transitioning) return; transitioning=true; setMenu(false);
+  await curtainIn();
+  if(ctx) ctx.revert(); ctx=null;
+  views[current].classList.remove('is-active'); views[target].classList.add('is-active'); current=target;
+  scrollTo(0,{immediate:true}); nav.classList.remove('is-hidden');
+  initView(target); if(hasGsap) ScrollTrigger.refresh();
+  afterShow(target,sub,q);
+  await curtainOut(); transitioning=false;
+}
+addEventListener('hashchange',()=>go());
+document.addEventListener('click',e=>{ const a=e.target.closest('a[data-route]'); if(!a) return; const href=a.getAttribute('href'); if(href===location.hash&&parse().view===current){ e.preventDefault(); scrollTo(0); } });
+$('#toTop').addEventListener('click',e=>{e.preventDefault();scrollTo(0);});
+
+/* ---------- per-view GSAP contexts ---------- */
+function initView(view){
+  if(!hasGsap) return;
+  const root=views[view];
+  ctx=gsap.context(()=>{
+    // parallax
+    $$('[data-parallax]',root).forEach(el=>{ const p=parseFloat(el.dataset.parallax)||.15; const trig=el.closest('section')||el.parentElement; gsap.fromTo(el,{yPercent:-p*40},{yPercent:p*40,ease:'none',scrollTrigger:{trigger:trig,start:'top bottom',end:'bottom top',scrub:true}}); });
+    // scrub words
+    $$('[data-scrub]',root).forEach(el=>{ if(reduced) return; gsap.to($$('.sw',el),{opacity:1,stagger:.04,ease:'none',scrollTrigger:{trigger:el,start:'top 82%',end:'bottom 58%',scrub:.4}}); });
+    // page hero image drift
+    $$('.page-hero img, .hero-media img.desk',root).forEach(img=>{ gsap.to(img,{yPercent:14,ease:'none',scrollTrigger:{trigger:img.parentElement,start:'top top',end:'bottom top',scrub:true}}); });
+    $$('.hero .wrap',root).forEach(w=>{ gsap.to(w,{yPercent:18,opacity:.2,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}}); });
+    // horizontal journey
+    if(view==='home'){
+      const mm=gsap.matchMedia();
+      mm.add('(min-width:1024px)',()=>{
+          const pin=$('#journeyPin'),track=$('#journeyTrack'),bar=$('#journeyBar');
+          const dist=()=>track.scrollWidth-innerWidth;
+          gsap.to(track,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:pin,start:'top top',end:()=>'+='+dist(),pin:true,scrub:1,anticipatePin:1,invalidateOnRefresh:true,onUpdate:s=>{bar.style.transform=`scaleX(${s.progress})`;}}});
+          $$('.dest img',track).forEach(img=>gsap.fromTo(img,{xPercent:-6},{xPercent:6,ease:'none',scrollTrigger:{trigger:pin,start:'top top',end:()=>'+='+dist(),scrub:true}}));
+        });
+      mm.add('(max-width:1023px)',()=>{ const pin=$('#journeyPin'),bar=$('#journeyBar'); pin.addEventListener('scroll',()=>{bar.style.transform=`scaleX(${pin.scrollLeft/(pin.scrollWidth-pin.clientWidth)})`;},{passive:true}); });
+      // trips subtle rise
+      gsap.utils.toArray('.trip').forEach((t,i)=>{ gsap.from(t,{y:40,opacity:0,duration:1,ease:'power3.out',delay:(i%3)*.1,scrollTrigger:{trigger:t,start:'top 88%',once:true},onComplete:()=>gsap.set(t,{clearProps:'transform,opacity'})}); });
+    }
+    if(view==='destinations'){ buildMap(); }
+  },root);
+}
+
+/* ---------- itineraries ---------- */
+function openItin(it,force){ const open=force===true?true:!it.classList.contains('is-open'); if(open){ $$('.itin.is-open').forEach(o=>{ if(o!==it){ o.classList.remove('is-open'); $('.itin-head',o).setAttribute('aria-expanded','false'); } }); } it.classList.toggle('is-open',open); $('.itin-head',it).setAttribute('aria-expanded',open); setTimeout(()=>hasGsap&&ScrollTrigger.refresh(),850); }
+$$('.itin-head').forEach(b=>b.addEventListener('click',()=>openItin(b.closest('.itin'))));
+$$('.qa button').forEach(b=>b.addEventListener('click',()=>{ const q=b.closest('.qa'); const o=!q.classList.contains('is-open'); q.classList.toggle('is-open',o); b.setAttribute('aria-expanded',o); setTimeout(()=>hasGsap&&ScrollTrigger.refresh(),650); }));
+
+/* ---------- map ---------- */
+function buildMap(){
+  const svg=$('#kmap'); if(!svg||svg.dataset.built) return; svg.dataset.built='1';
+  const X=lon=>(lon-33.0)*44, Y=lat=>(5.3-lat)*44;
+  const pts=a=>a.map(([lo,la])=>`${X(lo).toFixed(1)},${Y(la).toFixed(1)}`).join(' ');
+  const kenya=[[34.0,4.22],[34.45,4.62],[35.3,5.0],[35.95,4.6],[36.05,4.45],[36.9,4.43],[38.1,3.62],[39.5,3.45],[40.8,4.25],[41.9,3.98],[40.95,0.35],[41.0,-0.9],[41.55,-1.7],[40.9,-2.35],[40.2,-2.9],[40.1,-3.2],[39.85,-3.63],[39.67,-4.05],[39.58,-4.3],[39.2,-4.68],[38.3,-3.95],[37.7,-3.4],[37.6,-3.0],[36.0,-2.13],[33.93,-1.0],[34.1,-0.8],[34.45,-0.53],[34.75,-0.1],[34.55,0.05],[34.0,0.12],[34.1,0.45],[34.55,1.1],[34.45,1.4],[34.1,1.9],[34.35,2.6],[34.2,3.3],[34.0,3.6]];
+  const tz=[[33.93,-1.0],[37.6,-3.0],[37.7,-3.4],[39.2,-4.68],[39.7,-5.6],[33.2,-5.6],[33.2,-2.4],[33.6,-1.8]];
+  const lake=[[33.2,0.4],[34.0,0.12],[34.55,0.05],[34.75,-0.1],[34.45,-0.53],[34.1,-0.8],[33.93,-1.0],[33.6,-1.8],[33.2,-2.4]];
+  const pins=[
+    {id:'turkana',lon:36.1,lat:3.3,l:'Lake Turkana',s:1,dx:10},
+    {id:'marsabit',lon:37.98,lat:2.33,l:'Marsabit',s:1,dx:10},
+    {id:'samburu',lon:37.55,lat:0.62,l:'Samburu',dx:12},
+    {id:'meru',lon:38.25,lat:0.15,l:'Meru',s:1,dx:9},
+    {id:'laikipia',lon:36.9,lat:0.05,l:'Laikipia · Ol Pejeta',a:'end',dx:-10},
+    {id:'mtkenya',lon:37.32,lat:-0.15,l:'Mount Kenya',s:1,dx:9,dy:15},
+    {id:'nakuru',lon:36.08,lat:-0.37,l:'Lake Nakuru',a:'end',dx:-10,dy:7},
+    {id:'nairobi',lon:36.82,lat:-1.29,l:'Nairobi',city:1,dx:10},
+    {id:'mara',lon:35.15,lat:-1.5,l:'Maasai Mara',a:'middle',dx:0,dy:-12},
+    {id:'serengeti',lon:34.85,lat:-2.4,l:'Serengeti',a:'middle',dx:0,dy:-12},
+    {id:'ngorongoro',lon:35.55,lat:-3.25,l:'Ngorongoro',a:'middle',dx:0,dy:17},
+    {id:'amboseli',lon:37.25,lat:-2.65,l:'Amboseli',a:'middle',dx:0,dy:-12},
+    {id:'kili',lon:37.35,lat:-3.12,l:'Kilimanjaro',s:1,a:'middle',dx:8,dy:18},
+    {id:'tsavo',lon:38.45,lat:-2.85,l:'Tsavo',s:1,dx:9,dy:2},
+    {id:'watamu',lon:40.0,lat:-3.3,l:'Watamu',a:'end',dx:-9,dy:7,s:1},
+    {id:'diani',lon:39.55,lat:-4.3,l:'Diani',a:'end',dx:-10,dy:4}
+  ];
+  let h=`<defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="rgba(245,239,227,.08)" stroke-width="1"/></pattern></defs>`;
+  h+=`<polygon points="${pts(tz)}" fill="url(#hatch)" stroke="rgba(245,239,227,.18)" stroke-dasharray="3 4" stroke-width="1"/>`;
+  h+=`<polygon points="${pts(lake)}" fill="rgba(120,150,150,.12)" stroke="rgba(245,239,227,.15)" stroke-width="1"/>`;
+  h+=`<polygon class="land" points="${pts(kenya)}"/>`;
+  h+=`<text x="${X(33.6)}" y="${Y(-4.6)}" fill="rgba(245,239,227,.45)" font-size="10" letter-spacing="3" font-family="Figtree,sans-serif">TANZANIA</text>`;
+  h+=`<text x="${X(38.4)}" y="${Y(3.0)}" fill="rgba(245,239,227,.45)" font-size="10" letter-spacing="3" font-family="Figtree,sans-serif">KENYA</text>`;
+  h+=`<text x="${X(40.6)}" y="${Y(-2.4)}" fill="rgba(245,239,227,.3)" font-size="9" letter-spacing="2" font-family="Figtree,sans-serif" transform="rotate(-62 ${X(40.6)} ${Y(-2.4)})">INDIAN OCEAN</text>`;
+  pins.forEach(p=>{ const x=X(p.lon),y=Y(p.lat); const tx=x+(p.dx??10), ty=y+(p.dy??4); const r=p.city?2.5:(p.s?3:4.5);
+    h+=`<g class="pin${p.s?' small':''}" data-pin="${p.id}" tabindex="${p.s||p.city?-1:0}">${p.city||p.s?'':`<circle class="halo" cx="${x}" cy="${y}" r="8"/>`}<circle class="c" cx="${x}" cy="${y}" r="${r}"${p.city?' fill="rgba(245,239,227,.8)"':''}${p.s?' fill="rgba(200,166,99,.55)"':''}/><text x="${tx}" y="${ty}" text-anchor="${p.a||'start'}"${p.s||p.city?' fill="rgba(245,239,227,.5)"':''}>${p.l}</text></g>`; });
+  svg.innerHTML=h;
+  $$('.pin',svg).forEach(g=>{ const id=g.dataset.pin; const target=$(`.place[data-pin="${id}"]`); if(!target) return; g.style.cursor='pointer'; const act=()=>scrollTo(target,{offset:-110}); g.addEventListener('click',act); g.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();act();} }); });
+  const spy=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ const id=e.target.dataset.pin; $$('.pin',svg).forEach(g=>g.classList.toggle('is-on',g.dataset.pin===id)); } }); },{rootMargin:'-35% 0px -45% 0px'});
+  $$('.place[data-pin]').forEach(p=>spy.observe(p));
+}
+
+/* ---------- form ---------- */
+const form=$('#planForm');
+function collect(){ const d=new FormData(form); const interests=d.getAll('interests').join(', '); const lines=[`Name: ${d.get('name')}`,`Email: ${d.get('email')}`,`Phone: ${d.get('phone')||'—'}`,`Country: ${d.get('country')||'—'}`,`Dates: ${d.get('dates')||'flexible'}`,`Travellers: ${d.get('guests')}`,`Journey: ${d.get('trip')}`,`Length: ${d.get('length')}`,`Interests: ${interests||'—'}`,'',`${d.get('message')||''}`]; return {subject:`Safari enquiry — ${d.get('trip')}`,body:lines.join('\n')}; }
+function validate(){ let ok=true; ['f-name','f-email'].forEach(id=>{ const f=document.getElementById(id); const bad=!f.value.trim()||(f.type==='email'&&!/.+@.+\..+/.test(f.value)); f.style.borderBottomColor=bad?'#B03A2E':''; if(bad) ok=false; }); return ok; }
+form.addEventListener('submit',e=>{ e.preventDefault(); if(!validate()) return; const {subject,body}=collect(); location.href=`mailto:info@sarabisavanna.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`; done(); });
+$('[data-send="whatsapp"]').addEventListener('click',()=>{ if(!validate()) return; const {subject,body}=collect(); open(`https://wa.me/254708010499?text=${encodeURIComponent(subject+'\n\n'+body)}`,'_blank','noopener'); done(); });
+function done(){ form.style.display='none'; $('#formDone').classList.add('is-on'); setTimeout(()=>hasGsap&&ScrollTrigger.refresh(),50); }
+
+/* ---------- explore chooser ---------- */
+(function explore(){
+  const sec=$('#explore'); if(!sec) return;
+  const meta={kenya:{cap:'Maasai Mara, Kenya',cta:'#/destinations',other:'Tanzania'},tanzania:{cap:'Serengeti, Tanzania',cta:'#/destinations/tanzania',other:'Kenya'}};
+  const slideK=$('.explore-slide[data-country="kenya"]',sec), slideT=$('.explore-slide[data-country="tanzania"]',sec);
+  const mapK=$('.explore-map[data-country="kenya"]',sec), mapT=$('.explore-map[data-country="tanzania"]',sec);
+  const nameK=$('.explore-name[data-select="kenya"]',sec), nameT=$('.explore-name[data-select="tanzania"]',sec);
+  const clamp=v=>v<0?0:v>1?1:v;
+  // connector line overlay (drawn during drag)
+  const NS='http://www.w3.org/2000/svg';
+  const link=document.createElementNS(NS,'svg'); link.setAttribute('class','explore-link'); link.setAttribute('preserveAspectRatio','none'); link.setAttribute('aria-hidden','true');
+  const path=document.createElementNS(NS,'path'); link.appendChild(path);
+  const marker=document.createElementNS(NS,'circle'); marker.setAttribute('class','explore-travel'); marker.setAttribute('r','6'); link.appendChild(marker);
+  sec.insertBefore(link,sec.firstChild);
+  // drag hint
+  const hint=document.createElement('div'); hint.className='explore-hint'; hint.textContent='Drag across to explore ⟷';
+  const inner=$('.explore-inner',sec); if(inner) inner.appendChild(hint);
+
+  function set(c){
+    if(!meta[c]) return; sec.dataset.active=c; const m=meta[c];
+    $$('.explore-slide',sec).forEach(s=>s.classList.toggle('is-active',s.dataset.country===c));
+    $$('.explore-map',sec).forEach(s=>s.classList.toggle('is-active',s.dataset.country===c));
+    $$('.explore-name',sec).forEach(b=>b.setAttribute('aria-pressed',b.dataset.select===c));
+    $$('.explore-dots i',sec).forEach(d=>d.classList.toggle('is-on',d.dataset.dot===c));
+    const cap=$('[data-explore-caption]',sec); if(cap){ cap.style.opacity=0; setTimeout(()=>{cap.textContent=m.cap;cap.style.opacity=1;},260); }
+    $('[data-explore-cta]',sec).setAttribute('href',m.cta);
+    const sl=$('[data-switch-label]',sec); if(sl) sl.textContent=m.other;
+  }
+  $$('.explore-name',sec).forEach(b=>b.addEventListener('click',e=>{ if(suppress){e.preventDefault();return;} set(b.dataset.select); }));
+  $$('.explore-dots i',sec).forEach(d=>d.addEventListener('click',()=>set(d.dataset.dot)));
+  const sw=$('[data-explore-switch]',sec); if(sw) sw.addEventListener('click',()=>set(sec.dataset.active==='kenya'?'tanzania':'kenya'));
+
+  // ---- drag to swap (with connector line) ----
+  function pin(el){ const p=el.querySelector('.pin'); const r=p.getBoundingClientRect(); return {x:r.left+r.width/2,y:r.top+r.height/2}; }
+  function draw(f){
+    f=clamp(f);
+    slideK.style.opacity=1-f; slideT.style.opacity=f;
+    mapK.style.opacity=1-f; mapT.style.opacity=f;
+    nameK.style.opacity=(0.32+0.68*(1-f)).toFixed(3); nameT.style.opacity=(0.32+0.68*f).toFixed(3);
+    const sr=sec.getBoundingClientRect(), a=pin(mapK), b=pin(mapT);
+    const ax=a.x-sr.left, ay=a.y-sr.top, bx=b.x-sr.left, by=b.y-sr.top;   // both pins, section-local
+    const cx=(ax+bx)/2, cy=Math.min(ay,by)-46;                            // gentle bow above the pins
+    link.setAttribute('viewBox','0 0 '+sr.width+' '+sr.height); link.setAttribute('width',sr.width); link.setAttribute('height',sr.height);
+    path.setAttribute('d','M '+ax.toFixed(1)+' '+ay.toFixed(1)+' Q '+cx.toFixed(1)+' '+cy.toFixed(1)+' '+bx.toFixed(1)+' '+by.toFixed(1));
+    const t=f,u=1-t, ix=u*u*ax+2*u*t*cx+t*t*bx, iy=u*u*ay+2*u*t*cy+t*t*by; // marker rides the curve
+    marker.setAttribute('cx',ix.toFixed(1)); marker.setAttribute('cy',iy.toFixed(1));
+  }
+  function clearInline(){ [slideK,slideT,mapK,mapT,nameK,nameT].forEach(el=>el.style.opacity=''); }
+
+  let active=false, sx=0, base=0, W=1, frac=0, moved=false, suppress=false;
+  sec.addEventListener('pointerdown',e=>{
+    if(e.target.closest('.explore-cta,.explore-switch')) return;
+    active=true; moved=false; sx=e.clientX; base=sec.dataset.active==='tanzania'?1:0; frac=base; W=sec.clientWidth||1;
+    sec.classList.add('dragging');
+  });
+  addEventListener('pointermove',e=>{
+    if(!active) return;
+    const dx=e.clientX-sx; if(Math.abs(dx)>4) moved=true;
+    frac=clamp(base-dx/(W*0.42)); draw(frac);
+  });
+  function end(){
+    if(!active) return; active=false; sec.classList.remove('dragging'); clearInline();
+    if(moved){ suppress=true; setTimeout(()=>{suppress=false;},60); set(frac>=0.5?'tanzania':'kenya'); }
+  }
+  addEventListener('pointerup',end); addEventListener('pointercancel',end);
+  addEventListener('resize',()=>{ if(active) draw(frac); });
+})();
+
+/* ---------- marquee duplication ---------- */
+const rt=$('#reviewTrack'); if(rt){ rt.innerHTML+=rt.innerHTML; }
+
+/* ---------- misc ---------- */
+$('#year').textContent=new Date().getFullYear();
+addEventListener('load',()=>{ hasGsap&&ScrollTrigger.refresh(); });
+go(null,true);
+})();
+</script>
+
+</body>
+</html>
